@@ -7,7 +7,7 @@ from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
 
-BASE_PATH = "/hermann-gottlieb/"
+BASE_PATH = "/gottlieb/"
 ROOT = Path(__file__).resolve().parents[1]
 DIST = (ROOT / "dist").resolve()
 

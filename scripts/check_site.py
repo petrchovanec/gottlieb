@@ -11,7 +11,7 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / "dist"
 DATA = ROOT / "data"
-BASE_PATH = "/hermann-gottlieb/"
+BASE_PATH = "/gottlieb/"
 REQUIRED_PAGES = {
     "index.html",
     "biography.html",

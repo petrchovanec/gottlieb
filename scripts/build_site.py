@@ -13,8 +13,8 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data"
 SITE_DIR = ROOT / "site"
 DIST_DIR = ROOT / "dist"
-BASE_PATH = "/hermann-gottlieb/"
-PUBLIC_URL = "https://petrchovanec.github.io/hermann-gottlieb/"
+BASE_PATH = "/gottlieb/"
+PUBLIC_URL = "https://petrchovanec.github.io/gottlieb/"
 
 NAVIGATION = [
     ("home", "Home", "index.html"),

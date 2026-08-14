@@ -5,7 +5,7 @@ source-attested hotelier S. H. Gottlieb. The project keeps verified facts,
 conflicting evidence, hypotheses, and research leads visibly distinct.
 
 Planned public URL:
-[petrchovanec.github.io/hermann-gottlieb](https://petrchovanec.github.io/hermann-gottlieb/)
+[petrchovanec.github.io/gottlieb](https://petrchovanec.github.io/gottlieb/)
 
 ## Research architecture
 
@@ -32,10 +32,10 @@ python -m venv .venv
 ```
 
 The preview is served at
-`http://127.0.0.1:8000/hermann-gottlieb/`, matching the GitHub Pages base path.
+`http://127.0.0.1:8000/gottlieb/`, matching the GitHub Pages base path.
 
 ## GitHub Pages
 
 The Pages workflow builds and validates the site from the structured YAML on
 every push to `main`, then deploys the generated static files. All internal and
-asset URLs are rooted under `/hermann-gottlieb/`.
+asset URLs are rooted under `/gottlieb/`.
