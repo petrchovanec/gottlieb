@@ -1,0 +1,118 @@
+schema_version: 1
+record_type: person
+source_of_truth: research.md
+
+model_notes:
+  identity_policy: "Separate records represent unresolved identities. A name resemblance is not enough to merge them."
+  names: "Search variants are discovery aids and do not prove identity."
+
+people:
+  - id: PERSON-SYLVESTER-HERMANN-GOTTLIEB
+    preferred_name: "Sylvester Hermann Gottlieb"
+    record_scope: "Canonical working identity from the genealogical research dossier."
+    research_name_variants:
+      - "Sylvester Hermann Gottlieb"
+      - "Silvester Hermann Gottlieb"
+      - "Hermann Gottlieb"
+      - "S. H. Gottlieb"
+      - "S.H. Gottlieb"
+      - "Gottlieb, S. H."
+    identity_status: working-identity
+    claims:
+      - CLAIM-BIRTH-VIENNA-1871
+      - CLAIM-IDENTITY-SYLVESTER-AND-SH
+      - CLAIM-DEATH-UNRESOLVED
+    source_mentions:
+      - SRC-011
+    identity_links:
+      - target: PERSON-SH-GOTTLIEB-HOTELIER
+        relationship: possible-same-person
+        status: open-question
+        claim: CLAIM-IDENTITY-SYLVESTER-AND-SH
+        do_not_merge: true
+    caution: "The birth year and place are user-supplied pending the original baptismal entry. The hotel career is not conclusively linked to this full-name identity."
+
+  - id: PERSON-SH-GOTTLIEB-HOTELIER
+    preferred_name: "S. H. Gottlieb"
+    record_scope: "The hotelier identified by initials in hotel, directory, and promotional sources."
+    attested_or_reported_forms:
+      - "S. H. Gottlieb"
+      - "S.H. Gottlieb"
+    identity_status: source-attested-initials-unresolved
+    claims:
+      - CLAIM-SAVOY-1911
+      - CLAIM-BAUR-POSTCARD
+      - CLAIM-SAVOY-1922
+      - CLAIM-BAUR-BIBLOS-OCR
+      - CLAIM-GRAND-VICTORIA-1924
+      - CLAIM-MESSMER-1929
+      - CLAIM-MESSMER-C1932
+      - CLAIM-MESSMER-1934
+      - CLAIM-IDENTITY-SYLVESTER-AND-SH
+    source_mentions:
+      - SRC-001
+      - SRC-002
+      - SRC-003
+      - SRC-004
+      - SRC-006
+      - SRC-007
+      - SRC-008
+      - SRC-009
+    identity_links:
+      - target: PERSON-SYLVESTER-HERMANN-GOTTLIEB
+        relationship: possible-same-person
+        status: open-question
+        claim: CLAIM-IDENTITY-SYLVESTER-AND-SH
+        do_not_merge: true
+    caution: "Do not expand the initials or attach Vienna birth details without a person-level linking record."
+
+  - id: PERSON-I-GOTTLIEB
+    preferred_name: "I. Gottlieb"
+    record_scope: "Name as printed or transcribed in the secondary Savoy management chronology."
+    identity_status: unresolved-secondary-source-name
+    claims:
+      - CLAIM-SAVOY-SECONDARY-GOTTLIEB-1910-1918
+    source_mentions:
+      - SRC-018
+    identity_links:
+      - target: PERSON-SH-GOTTLIEB-HOTELIER
+        relationship: possibly-related-or-transcription-error
+        status: open-question
+        do_not_merge: true
+    caution: "The dossier lists several possible explanations for the name and chronology, but adopts none of them."
+
+  - id: PERSON-HERMANN-DUFFING
+    preferred_name: "Hermann Duffing"
+    record_scope: "Person named in the secondary Savoy management sequence."
+    identity_status: named-in-secondary-source
+    claims:
+      - CLAIM-SAVOY-SECONDARY-DUFFING-1909-1910
+    source_mentions:
+      - SRC-018
+
+  - id: PERSON-FRITZ-GIGER
+    preferred_name: "Fritz Giger"
+    record_scope: "Person named in the secondary Savoy management sequence."
+    identity_status: named-in-secondary-source
+    claims:
+      - CLAIM-SAVOY-SECONDARY-GIGER-1918-1926
+    source_mentions:
+      - SRC-018
+    caution: "His role relative to the direct 1922 S. H. Gottlieb listing remains unresolved."
+
+  - id: PERSON-FREDERICK-DOSSENBACH
+    preferred_name: "Frederick Dossenbach"
+    record_scope: "Author of the 1922 travel guide."
+    identity_status: source-author
+    claims: []
+    source_mentions:
+      - SRC-001
+
+  - id: PERSON-HANS-SCHULTHESS
+    preferred_name: "Hans Schulthess"
+    record_scope: "Author of the 1938 Savoy centenary history."
+    identity_status: source-author
+    claims:
+      - CLAIM-SAVOY-CENTENARY-1938
+    source_mentions:
+      - SRC-010

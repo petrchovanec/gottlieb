@@ -1,0 +1,77 @@
+schema_version: 1
+record_type: place
+source_of_truth: research.md
+
+places:
+  - id: PLACE-VIENNA
+    preferred_name: "Vienna"
+    type: city
+    country: "Austria"
+    claims:
+      - CLAIM-BIRTH-VIENNA-1871
+    source_mentions:
+      - SRC-011
+    research_role: "Working birthplace and location of the baptismal-record search."
+    caution: "The exact parish, address, and original baptismal entry are not yet incorporated."
+
+  - id: PLACE-ZURICH
+    preferred_name: "Zürich"
+    type: city
+    country: "Switzerland"
+    claims:
+      - CLAIM-SAVOY-1911
+      - CLAIM-BAUR-POSTCARD
+      - CLAIM-SAVOY-1922
+      - CLAIM-BAUR-BIBLOS-OCR
+      - CLAIM-SAVOY-SECONDARY-DUFFING-1909-1910
+      - CLAIM-SAVOY-SECONDARY-GOTTLIEB-1910-1918
+      - CLAIM-SAVOY-SECONDARY-GIGER-1918-1926
+      - CLAIM-GRAND-VICTORIA-1924
+      - CLAIM-SAVOY-CENTENARY-1938
+      - CLAIM-ZURICH-MELDEKARTE-RESEARCH-VALUE
+    source_mentions:
+      - SRC-001
+      - SRC-002
+      - SRC-003
+      - SRC-004
+      - SRC-005
+      - SRC-006
+      - SRC-010
+      - SRC-012
+      - SRC-015
+      - SRC-016
+      - SRC-018
+    research_role: "Principal location of the Savoy-Baur en Ville career research and municipal-record search."
+
+  - id: PLACE-BADEN-BADEN
+    preferred_name: "Baden-Baden"
+    type: city
+    country: "Germany"
+    claims:
+      - CLAIM-MESSMER-1929
+      - CLAIM-MESSMER-C1932
+      - CLAIM-MESSMER-1934
+      - CLAIM-DEATH-UNRESOLVED
+    source_mentions:
+      - SRC-007
+      - SRC-008
+      - SRC-009
+      - SRC-013
+      - SRC-014
+      - SRC-017
+    research_role: "Location of Hotel Messmer and the later-life, municipal, business, and death-record research."
+    caution: "The dossier does not establish that Sylvester Hermann Gottlieb died in Baden-Baden."
+
+  - id: PLACE-WERDERSTRASSE-AM-KURHAUS
+    preferred_name: "Werderstraße / am Kurhaus"
+    type: reported-address-description
+    parent_place: PLACE-BADEN-BADEN
+    status: prior-chat-verified
+    claims:
+      - CLAIM-MESSMER-C1932
+      - CLAIM-MESSMER-1934
+    source_mentions:
+      - SRC-008
+      - SRC-009
+    research_role: "Address wording reported in earlier Hotel Messmer telephone-directory findings."
+    caution: "The exact directory wording and pages must be reacquired; do not infer that Gottlieb personally resided there."

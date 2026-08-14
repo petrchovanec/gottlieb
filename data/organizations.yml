@@ -1,0 +1,160 @@
+schema_version: 1
+record_type: organization
+source_of_truth: research.md
+
+organizations:
+  - id: ORG-SAVOY-BAUR-EN-VILLE
+    preferred_name: "Savoy-Baur en Ville"
+    type: hotel
+    name_variants:
+      - "Savoy-Baur en Ville"
+      - "Baur en Ville"
+      - "Savoy"
+      - "Hotel Savoy"
+      - "Hotel Baur"
+    place: PLACE-ZURICH
+    claims:
+      - CLAIM-SAVOY-1911
+      - CLAIM-BAUR-POSTCARD
+      - CLAIM-SAVOY-1922
+      - CLAIM-BAUR-BIBLOS-OCR
+      - CLAIM-SAVOY-SECONDARY-DUFFING-1909-1910
+      - CLAIM-SAVOY-SECONDARY-GOTTLIEB-1910-1918
+      - CLAIM-SAVOY-SECONDARY-GIGER-1918-1926
+      - CLAIM-SAVOY-CENTENARY-1938
+    source_mentions:
+      - SRC-001
+      - SRC-002
+      - SRC-003
+      - SRC-004
+      - SRC-005
+      - SRC-010
+      - SRC-018
+    caution: "The management chronology contains an unresolved conflict between direct 1922 evidence and a secondary timeline."
+
+  - id: ORG-GRAND-HOTEL-VICTORIA
+    preferred_name: "Grand Hotel Victoria"
+    type: hotel
+    place: PLACE-ZURICH
+    claims:
+      - CLAIM-GRAND-VICTORIA-1924
+    source_mentions:
+      - SRC-006
+    caution: "The connection to S. H. Gottlieb is a needs-recheck lead; his role is not established."
+
+  - id: ORG-HOTEL-MESSMER
+    preferred_name: "Hotel Messmer"
+    type: hotel
+    place: PLACE-BADEN-BADEN
+    claims:
+      - CLAIM-MESSMER-1929
+      - CLAIM-MESSMER-C1932
+      - CLAIM-MESSMER-1934
+    source_mentions:
+      - SRC-007
+      - SRC-008
+      - SRC-009
+      - SRC-014
+      - SRC-017
+    caution: "Do not infer ownership of the property, residence at the hotel, or an exact tenure from the current evidence."
+
+  - id: ORG-INTERNET-ARCHIVE
+    preferred_name: "Internet Archive"
+    type: digital-repository
+    claims: []
+    source_mentions:
+      - SRC-001
+
+  - id: ORG-AXIOART-DARABANTH
+    preferred_name: "Axioart/Darabanth auction archive"
+    type: auction-catalog-repository
+    claims: []
+    source_mentions:
+      - SRC-002
+    caution: "The catalog record is verified, but the original postcard and its date still require inspection."
+
+  - id: ORG-BIBLOS-PK
+    preferred_name: "Biblos / Politechnika Krakowska digital repository"
+    type: digital-repository
+    claims: []
+    source_mentions:
+      - SRC-004
+
+  - id: ORG-ZENTRALBIBLIOTHEK-ZURICH
+    preferred_name: "Zentralbibliothek Zürich"
+    type: library
+    place: PLACE-ZURICH
+    claims: []
+    source_mentions:
+      - SRC-005
+
+  - id: ORG-AUSTRIAN-NATIONAL-LIBRARY-ANNO
+    preferred_name: "Austrian National Library, ANNO"
+    type: newspaper-archive
+    claims: []
+    source_mentions:
+      - SRC-006
+
+  - id: ORG-WOLFSONIAN-FIU
+    preferred_name: "The Wolfsonian–Florida International University"
+    type: museum-and-repository
+    claims:
+      - CLAIM-SAVOY-CENTENARY-1938
+    source_mentions:
+      - SRC-010
+
+  - id: ORG-STADTARCHIV-ZURICH
+    preferred_name: "Stadtarchiv Zürich"
+    type: municipal-archive
+    place: PLACE-ZURICH
+    claims:
+      - CLAIM-ZURICH-MELDEKARTE-RESEARCH-VALUE
+    source_mentions:
+      - SRC-012
+
+  - id: ORG-STADTARCHIV-BADEN-BADEN
+    preferred_name: "Stadtarchiv Baden-Baden"
+    type: municipal-archive
+    place: PLACE-BADEN-BADEN
+    contact: "museum.archiv@baden-baden.de"
+    claims:
+      - CLAIM-DEATH-UNRESOLVED
+      - CLAIM-IDENTITY-SYLVESTER-AND-SH
+    source_mentions:
+      - SRC-013
+      - SRC-014
+
+  - id: ORG-NEUE-ZURCHER-ZEITUNG
+    preferred_name: "Neue Zürcher Zeitung"
+    type: newspaper
+    place: PLACE-ZURICH
+    claims: []
+    source_mentions:
+      - SRC-015
+
+  - id: ORG-TAGES-ANZEIGER
+    preferred_name: "Tages-Anzeiger"
+    type: newspaper
+    place: PLACE-ZURICH
+    claims: []
+    source_mentions:
+      - SRC-016
+
+  - id: ORG-BADISCHES-TAGBLATT
+    preferred_name: "Badisches Tagblatt"
+    type: newspaper
+    place: PLACE-BADEN-BADEN
+    claims: []
+    source_mentions:
+      - SRC-017
+
+  - id: ORG-FAMOUS-HOTELS
+    preferred_name: "Famous Hotels"
+    type: secondary-hotel-history-website
+    claims:
+      - CLAIM-SAVOY-SECONDARY-DUFFING-1909-1910
+      - CLAIM-SAVOY-SECONDARY-GOTTLIEB-1910-1918
+      - CLAIM-SAVOY-SECONDARY-GIGER-1918-1926
+    source_mentions:
+      - SRC-018
+    caution: "Its management chronology conflicts with the direct 1922 source."
