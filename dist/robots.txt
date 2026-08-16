@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://petrchovanec.github.io/gottlieb/sitemap.xml
