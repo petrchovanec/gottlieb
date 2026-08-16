@@ -1,0 +1,185 @@
+schema_version: 1
+record_type: timeline-event
+source_of_truth: research.md
+
+model_notes:
+  date_label: "Human-readable date wording preserved from the dossier."
+  temporal_precision: "Describes the precision of date_label; it must not imply a more exact date."
+  status: "Evidence status for the event, not a visual styling preference."
+
+events:
+  - id: EVT-1871-BIRTH
+    date_label: "1871"
+    temporal_precision: year
+    event: "Genealogical research identifies the birth of Sylvester Hermann Gottlieb in Vienna."
+    status: user-supplied
+    subjects:
+      - PERSON-SYLVESTER-HERMANN-GOTTLIEB
+    places:
+      - PLACE-VIENNA
+    organizations: []
+    claims:
+      - CLAIM-BIRTH-VIENNA-1871
+    sources:
+      - SRC-011
+    caution: "The original baptismal entry has not been incorporated."
+
+  - id: EVT-C1910-SAVOY-SECONDARY
+    date_label: "circa 1910"
+    temporal_precision: circa-year
+    event: "A secondary source begins a Baur en Ville management period attributed to 'I. Gottlieb'."
+    status: conflict
+    subjects:
+      - PERSON-I-GOTTLIEB
+    places:
+      - PLACE-ZURICH
+    organizations:
+      - ORG-SAVOY-BAUR-EN-VILLE
+    claims:
+      - CLAIM-SAVOY-SECONDARY-GOTTLIEB-1910-1918
+    sources:
+      - SRC-018
+    caution: "Do not identify 'I. Gottlieb' as S. H. or Sylvester Hermann Gottlieb without evidence."
+
+  - id: EVT-1911-SAVOY
+    date_label: "1911"
+    temporal_precision: year
+    event: "Earlier research found S. H. Gottlieb identified as director of Baur en Ville or Savoy."
+    status: prior-chat-verified
+    subjects:
+      - PERSON-SH-GOTTLIEB-HOTELIER
+    places:
+      - PLACE-ZURICH
+    place_note: "The advertisement was published elsewhere; the dossier describes it as a Vienna newspaper advertisement."
+    organizations:
+      - ORG-SAVOY-BAUR-EN-VILLE
+    claims:
+      - CLAIM-SAVOY-1911
+    sources:
+      - SRC-003
+    caution: "Reacquire the exact advertisement and metadata before formal public citation."
+
+  - id: EVT-BEFORE-OR-AROUND-1922-POSTCARD
+    date_label: "before or around 1922"
+    temporal_precision: before-or-around-year
+    event: "A historic promotional-postcard catalog record associates S. H. Gottlieb with Baur en Ville management."
+    status: verified-direct
+    status_scope: "Verified as catalog evidence only."
+    subjects:
+      - PERSON-SH-GOTTLIEB-HOTELIER
+    places:
+      - PLACE-ZURICH
+    organizations:
+      - ORG-SAVOY-BAUR-EN-VILLE
+    claims:
+      - CLAIM-BAUR-POSTCARD
+    sources:
+      - SRC-002
+    caution: "The postcard has no verified exact date in the dossier."
+
+  - id: EVT-1922-SAVOY
+    date_label: "1922"
+    temporal_precision: year
+    event: "A Swiss travel guide explicitly lists S. H. Gottlieb as director of Savoy-Baur en Ville."
+    status: verified-direct
+    subjects:
+      - PERSON-SH-GOTTLIEB-HOTELIER
+    places:
+      - PLACE-ZURICH
+    organizations:
+      - ORG-SAVOY-BAUR-EN-VILLE
+    claims:
+      - CLAIM-SAVOY-1922
+    sources:
+      - SRC-001
+    caution: "The source does not by itself prove that S. H. Gottlieb was Sylvester Hermann Gottlieb."
+
+  - id: EVT-1924-GRAND-HOTEL-VICTORIA
+    date_label: "1924"
+    temporal_precision: year
+    event: "Earlier research identified a possible association between S. H. Gottlieb and Grand Hotel Victoria."
+    status: needs-recheck
+    subjects:
+      - PERSON-SH-GOTTLIEB-HOTELIER
+    places:
+      - PLACE-ZURICH
+    organizations:
+      - ORG-GRAND-HOTEL-VICTORIA
+    claims:
+      - CLAIM-GRAND-VICTORIA-1924
+    sources:
+      - SRC-006
+    caution: "Do not state that Gottlieb was the hotel's director."
+
+  - id: EVT-1929-HOTEL-MESSMER
+    date_label: "1929"
+    temporal_precision: year-claimed-by-listing
+    event: "Marketplace metadata indicates a Hotel Messmer advertisement associated with Gottlieb."
+    status: indexed-lead
+    subjects:
+      - PERSON-SH-GOTTLIEB-HOTELIER
+    places:
+      - PLACE-BADEN-BADEN
+    organizations:
+      - ORG-HOTEL-MESSMER
+    claims:
+      - CLAIM-MESSMER-1929
+    sources:
+      - SRC-007
+    caution: "The underlying advertisement has not been transcribed or independently preserved."
+
+  - id: EVT-EARLY-1930S-HOTEL-MESSMER
+    date_label: "early 1930s"
+    temporal_precision: approximate-period
+    event: "Earlier research identified S. H. Gottlieb as Inhaber or proprietor of Hotel Messmer in telephone directories."
+    status: prior-chat-verified
+    subjects:
+      - PERSON-SH-GOTTLIEB-HOTELIER
+    places:
+      - PLACE-BADEN-BADEN
+    organizations:
+      - ORG-HOTEL-MESSMER
+    claims:
+      - CLAIM-MESSMER-C1932
+      - CLAIM-MESSMER-1934
+    sources:
+      - SRC-008
+      - SRC-009
+    caution: "The exact pages must be reacquired, and Inhaber must be interpreted in its commercial context."
+
+  - id: EVT-1938-SAVOY-CENTENARY-BOOK
+    date_label: "1938"
+    temporal_precision: year
+    event: "Hans Schulthess's Savoy centenary history was published in Zürich."
+    status: catalog-verified
+    subjects:
+      - PERSON-HANS-SCHULTHESS
+    places:
+      - PLACE-ZURICH
+    organizations:
+      - ORG-SAVOY-BAUR-EN-VILLE
+      - ORG-WOLFSONIAN-FIU
+    claims:
+      - CLAIM-SAVOY-CENTENARY-1938
+    sources:
+      - SRC-010
+    caution: "The publication may clarify the management conflict, but its relevant contents have not been inspected."
+
+  - id: EVT-DEATH-UNKNOWN
+    date_label: "unknown"
+    temporal_precision: unknown
+    event: "The date and place of death remain unresolved."
+    status: open-question
+    subjects:
+      - PERSON-SYLVESTER-HERMANN-GOTTLIEB
+    places: []
+    organizations: []
+    claims:
+      - CLAIM-DEATH-UNRESOLVED
+    sources: []
+    research_targets:
+      - SRC-013
+      - SRC-015
+      - SRC-016
+      - SRC-017
+    caution: "Do not infer a death year or place."

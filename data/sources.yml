@@ -1,0 +1,287 @@
+schema_version: 1
+record_type: source
+source_of_truth: research.md
+
+sources:
+  - id: SRC-001
+    title: "How to See Switzerland: A Practical Guide"
+    type: travel-guide
+    author: "Frederick Dossenbach"
+    date_label: "1922"
+    publisher: "G. E. Stechert & Co."
+    repository: "Internet Archive"
+    status: verified-direct
+    url: "https://archive.org/stream/howtoseeswitzerl00dossuoft/howtoseeswitzerl00dossuoft_djvu.txt"
+    establishes: "The Zürich hotel listing identifies S. H. Gottlieb as director of Savoy-Baur en Ville."
+    claims:
+      - CLAIM-SAVOY-1922
+    notes: "The dossier describes this as the strongest direct, dated evidence of the Zürich hotel position."
+
+  - id: SRC-002
+    title: "Baur en Ville promotional postcard catalog record"
+    type: postcard-catalog-record
+    description: "Interior views of the Grand Hotel/Baur en Ville, Zürich."
+    repository: "Axioart/Darabanth auction archive"
+    status: verified-direct
+    status_scope: "Verified as to the catalog record only."
+    date_label: null
+    url: "https://live.axioart.com/tetel/zurich-zurich-grand-hotel-baur-en-ville-lesesaal-speise-3993d93c"
+    catalog_wording: "Zürich, Zurich; Grand Hotel, Baur en Ville, Lesesaal, Speisesaal, Damensalon. Direktion S.H. Gottlieb"
+    claims:
+      - CLAIM-BAUR-POSTCARD
+    missing:
+      - "scan front"
+      - "scan reverse"
+      - "printer or publisher"
+      - "postal date if used"
+      - "approximate production date"
+      - "copyright or reproduction assessment"
+    caution: "Do not assign an exact year until the original card or dated catalog information is inspected."
+
+  - id: SRC-003
+    title: "1911 Baur en Ville advertisement"
+    type: newspaper-advertisement
+    repository: "Arcanum or related historical-newspaper database"
+    date_label: "1911"
+    date_qualification: approximate
+    status: prior-chat-verified
+    earlier_finding: "Direktion: S. H. Gottlieb"
+    claims:
+      - CLAIM-SAVOY-1911
+    missing:
+      - "publication title"
+      - "exact issue date"
+      - "page"
+      - "permanent URL"
+      - "image or transcription"
+    caution: "Reacquire before formal public citation."
+
+  - id: SRC-004
+    title: "Biblos Repository travel or hotel source"
+    type: indexed-digitized-source
+    repository: "Biblos / Politechnika Krakowska digital repository"
+    date_label: null
+    status: indexed-lead
+    url: "https://repozytorium.biblos.pk.edu.pl/redo/resources/39044/file/scans/DEFAULT/OCR_rezultaty/100000298978_A_v1_200dpi_q60.pdf"
+    indexed_evidence: "OCR indicates 'S. H. Gottlieb, Direktor' near a Baur en Ville entry."
+    claims:
+      - CLAIM-BAUR-BIBLOS-OCR
+    missing:
+      - "publication title"
+      - "publication date"
+      - "page number"
+      - "source context"
+      - "exact wording checked against the scan"
+      - "whether the entry includes an image or other information"
+
+  - id: SRC-005
+    title: "Zürich address books"
+    type: city-address-book-collection
+    repository: "Zentralbibliothek Zürich"
+    example_title: "Adressbuch der Stadt Zürich für 1911"
+    date_label: "1911 example; suggested search period 1908-1925"
+    status: research-lead
+    url: "https://zop.zb.uzh.ch/items/c80bd44d-f36f-4010-bf4b-8dea80c36a23"
+    claims: []
+    research_value:
+      - "private residence"
+      - "business address"
+      - "position or title"
+      - "duration of residence"
+
+  - id: SRC-006
+    title: "Grand Hotel Victoria advertisement or reference"
+    type: newspaper-advertisement-or-reference
+    repository: "Austrian National Library, ANNO"
+    date_label: "approximately 28 June 1924"
+    status: needs-recheck
+    claims:
+      - CLAIM-GRAND-VICTORIA-1924
+    caution: "Do not present Gottlieb as director of Grand Hotel Victoria in 1924. The original item has not been reacquired."
+    missing:
+      - "newspaper title"
+      - "exact issue"
+      - "page"
+      - "permanent URL"
+      - "verified wording and role"
+
+  - id: SRC-007
+    title: "Hotel Messmer 1929 advertisement marketplace record"
+    type: marketplace-listing
+    description: "Historical Hotel Messmer advertisement associated in marketplace metadata with Gottlieb."
+    date_label: "1929"
+    date_qualification: claimed-by-listing
+    status: indexed-lead
+    url: "https://www.ebay.de/itm/327206589703"
+    claims:
+      - CLAIM-MESSMER-1929
+    caution: "The marketplace title alone does not establish Gottlieb's position or ownership."
+
+  - id: SRC-008
+    title: "Reichs-Telefonbuch, circa 1932"
+    type: telephone-directory
+    date_label: "circa 1932"
+    status: prior-chat-verified
+    earlier_finding: "A Hotel Messmer entry named S. H. Gottlieb as Inhaber."
+    claims:
+      - CLAIM-MESSMER-C1932
+    missing:
+      - "exact edition"
+      - "page"
+      - "column"
+      - "scan"
+      - "exact wording"
+
+  - id: SRC-009
+    title: "Reichs-Telefonbuch 1934"
+    type: telephone-directory
+    date_label: "1934"
+    status: prior-chat-verified
+    status_scope: "The Gottlieb finding was previously inspected; the edition's existence was independently reverified."
+    url: "https://www.digi-hub.de/viewer/metadata/BV044722112/"
+    earlier_finding: "A Hotel Messmer listing was associated with S. H. Gottlieb."
+    claims:
+      - CLAIM-MESSMER-1934
+    missing:
+      - "exact page"
+      - "column"
+      - "scan"
+      - "exact wording"
+
+  - id: SRC-010
+    title: "Savoy Hotel Baur en Ville Zürich 1838-1938"
+    type: illustrated-centenary-book
+    author: "Hans Schulthess"
+    place_of_publication: "Zürich"
+    date_label: "1938"
+    extent: "64 pages, illustrated"
+    repository: "The Wolfsonian–Florida International University"
+    accession: "XB1991.1308"
+    status: catalog-verified
+    url: "https://digital.wolfsonian.org/WOLF063701"
+    claims:
+      - CLAIM-SAVOY-CENTENARY-1938
+    caution: "The book's relevant contents have not yet been inspected."
+
+  - id: SRC-011
+    title: "Austria, Vienna Catholic Church Births and Baptisms, 1850-1920"
+    type: baptism-collection
+    subject_description: "Genealogical match for Sylvester Hermann Gottlieb, born Vienna in 1871."
+    date_label: "1871"
+    status: user-supplied
+    status_scope: "Record match supplied through genealogical research; the original entry is not incorporated."
+    claims:
+      - CLAIM-BIRTH-VIENNA-1871
+    missing:
+      - "archival repository and collection details"
+      - "parish"
+      - "volume"
+      - "page or folio"
+      - "entry number"
+      - "exact birth date"
+      - "exact baptism date"
+      - "complete name as recorded"
+      - "parents and family details"
+      - "address and marginal annotations"
+
+  - id: SRC-012
+    title: "Stadtarchiv Zürich Meldekarten der Einwohnerkontrolle"
+    type: municipal-registration-records
+    repository: "Stadtarchiv Zürich"
+    coverage_note: "The dossier states that historical information from cards through 1976 can be requested."
+    status: high-priority-research-lead
+    url: "https://www.stadt-zuerich.ch/de/stadtleben/stadtportraet/zuerichs-geschichte/stadtarchiv/benutzung.html"
+    claims:
+      - CLAIM-ZURICH-MELDEKARTE-RESEARCH-VALUE
+    research_period: "1908-1925"
+    research_value:
+      - "exact birth data"
+      - "birthplace and nationality"
+      - "marital status and spouse"
+      - "occupation"
+      - "Zürich addresses"
+      - "arrival and departure dates"
+      - "previous residence and destination"
+
+  - id: SRC-013
+    title: "Baden-Baden civil death registers"
+    type: civil-death-registers
+    repository: "Stadtarchiv Baden-Baden Digitaler Lesesaal"
+    date_label: "1930s and surrounding years"
+    status: high-priority-research-lead
+    url: "https://baden-baden.de/kultur-und-engagement/stadtmuseum--stadtarchiv/stadtarchiv/digitaler-lesesaal"
+    claims: []
+    research_targets:
+      - CLAIM-DEATH-UNRESOLVED
+    caution: "Search forward from the last documented appearance; do not assume a death year or place."
+
+  - id: SRC-014
+    title: "Baden-Baden registration and business files"
+    type: municipal-and-business-records
+    repository: "Stadtarchiv Baden-Baden"
+    contact: "museum.archiv@baden-baden.de"
+    address: "Küferstraße 3, 76530 Baden-Baden, Germany"
+    date_label: "approximately 1928-1936 or later"
+    status: high-priority-research-lead
+    claims: []
+    research_targets:
+      - CLAIM-IDENTITY-SYLVESTER-AND-SH
+    potential_records:
+      - "Meldekarte or Melderegister entry"
+      - "Gewerbeakte"
+      - "Gaststättenkonzession"
+      - "hotel operating licence"
+      - "commercial registration"
+      - "lease records"
+      - "address-book references"
+      - "alien or police registration if applicable"
+      - "death-register entry"
+      - "estate or probate references"
+
+  - id: SRC-015
+    title: "Neue Zürcher Zeitung archive"
+    type: newspaper-archive
+    status: research-lead
+    claims: []
+    potential_topics:
+      - "appointments"
+      - "hotel advertising"
+      - "business news"
+      - "departures"
+      - "obituary or death notice"
+
+  - id: SRC-016
+    title: "Tages-Anzeiger archive"
+    type: newspaper-archive
+    status: research-lead
+    claims: []
+    potential_topics:
+      - "Zürich career chronology"
+      - "hotel advertising"
+      - "obituary or death notice"
+
+  - id: SRC-017
+    title: "Baden-Baden press and spa publications"
+    type: newspaper-and-tourism-sources
+    date_label: "priority period 1928-1936"
+    status: research-lead
+    claims: []
+    potential_sources:
+      - "Badisches Tagblatt"
+      - "Badeblatt"
+      - "Hauptfremdenliste"
+      - "tourist guides"
+      - "hotel advertisements"
+      - "address books"
+
+  - id: SRC-018
+    title: "Famous Hotels management chronology"
+    type: secondary-hotel-history
+    status: conflict
+    status_scope: "Secondary source whose chronology conflicts with the direct 1922 evidence."
+    url: "https://famoushotels.org/hotels/savoy-baur-en-ville"
+    claims:
+      - CLAIM-SAVOY-SECONDARY-DUFFING-1909-1910
+      - CLAIM-SAVOY-SECONDARY-GOTTLIEB-1910-1918
+      - CLAIM-SAVOY-SECONDARY-GIGER-1918-1926
+    caution: "Do not assume that 'I. Gottlieb' is a typographical error or silently prefer this chronology over SRC-001."
