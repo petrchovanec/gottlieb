@@ -39,6 +39,7 @@ STATUS_LABELS = {
     "research-lead": "Research lead",
     "high-priority-research-lead": "High-priority lead",
     "open-question": "Open question",
+    "official-secondary": "Official secondary",
     "working-identity": "Working identity",
     "source-attested-initials-unresolved": "Source-attested initials",
     "unresolved-secondary-source-name": "Unresolved name",
@@ -50,6 +51,7 @@ STATUS_DEFINITIONS = [
     ("verified-direct", "The source or a sufficiently detailed source record has been inspected."),
     ("prior-chat-verified", "Previously inspected, but the exact scan or page should be reacquired before publication where possible."),
     ("catalog-verified", "The source's existence and bibliographic identity are verified; its contents have not yet been inspected."),
+    ("official-secondary", "An official or archival institution's secondary historical account was inspected; any underlying primary files remain separately qualified."),
     ("user-supplied", "Supplied through family or genealogical research and not independently established here."),
     ("indexed-lead", "Indicated by a catalog, listing, result, or OCR index; the primary source has not been adequately inspected."),
     ("needs-recheck", "An earlier finding lacks enough current documentation to be published as fact."),
@@ -140,7 +142,7 @@ def claim_card(claim_id: str, compact: bool = False) -> str:
 
 
 def evidence_key() -> str:
-    key_statuses = ["verified-direct", "prior-chat-verified", "user-supplied", "indexed-lead", "needs-recheck", "conflict", "open-question"]
+    key_statuses = ["verified-direct", "official-secondary", "prior-chat-verified", "user-supplied", "indexed-lead", "needs-recheck", "conflict", "open-question"]
     badges = "".join(status_badge(status) for status in key_statuses)
     return f'<aside class="evidence-key" aria-label="Evidence status key"><strong>Evidence key</strong><div>{badges}</div></aside>'
 
@@ -187,7 +189,7 @@ def page_layout(page_id: str, title: str, description: str, content: str) -> str
   <footer class="site-footer">
     <div>
       <p><strong>Hermann Gottlieb Historical Research</strong></p>
-      <p>An evidence-led public dossier. Research last compiled 14 August 2026.</p>
+      <p>An evidence-led public dossier. Research updated 16 August 2026.</p>
     </div>
     <div class="footer-links">
       <a href="{internal_url('methodology.html')}">Evidence methodology</a>
@@ -238,19 +240,19 @@ def build_home() -> str:
         <p>The strongest findings are presented with their qualifications and source IDs intact.</p>
       </div>
       <div class="card-grid card-grid-2">
+        {claim_card('CLAIM-BAUR-BIBLOS-OCR', compact=True)}
         {claim_card('CLAIM-SAVOY-1922', compact=True)}
-        {claim_card('CLAIM-BAUR-POSTCARD', compact=True)}
-        {claim_card('CLAIM-BIRTH-VIENNA-1871', compact=True)}
-        {claim_card('CLAIM-MESSMER-1934', compact=True)}
+        {claim_card('CLAIM-SYLVESTER-BADEN-HOTELIER-1931', compact=True)}
+        {claim_card('CLAIM-MESSMER-LESSEE-1931', compact=True)}
       </div>
     </section>
     <section class="section section-tinted">
       <div class="container split-feature">
         <div>
           <p class="kicker">Research priority</p>
-          <h2>Connect the initials to the person.</h2>
-          <p>The highest-value next record is a Zürich municipal registration card. It may connect the full name, Vienna birth information, addresses, and hotel career in one person-level source.</p>
-          {source_citations(['SRC-012'], 'Research lead')}
+          <h2>Trace the full-name hotelier.</h2>
+          <p>Baden-Baden address books and the court file behind the 1931 bankruptcy notice may reveal residence, birth information, nationality, family status, and business arrangements—details needed to test the Zürich identity link.</p>
+          {source_citations(['SRC-020', 'SRC-023'], 'Research leads')}
         </div>
         <div class="route-list">
           <a href="{internal_url('timeline.html')}"><strong>Follow the chronology</strong><span>See every event with its evidence status.</span></a>
@@ -284,12 +286,12 @@ def build_biography() -> str:
       </section>
       <section class="biography-section">
         <p class="chapter-number">02</p><h2>Zürich and the Savoy-Baur en Ville</h2>
-        <p>Several sources associate the initials S. H. Gottlieb with the hotel, but they carry different levels of evidentiary weight.</p>
-        {source_citations(['SRC-001', 'SRC-002', 'SRC-003', 'SRC-004'])}
+        <p>Several sources associate the initials S. H. Gottlieb with the hotel. The sequence now includes a verified 1914 guide entry and a verified 1922 listing, but the separate dates do not prove continuous service.</p>
+        {source_citations(['SRC-001', 'SRC-002', 'SRC-003', 'SRC-004', 'SRC-019'])}
         {claim_card('CLAIM-SAVOY-1911')}
+        {claim_card('CLAIM-BAUR-BIBLOS-OCR')}
         {claim_card('CLAIM-BAUR-POSTCARD')}
         {claim_card('CLAIM-SAVOY-1922')}
-        {claim_card('CLAIM-BAUR-BIBLOS-OCR')}
       </section>
       <section class="biography-section conflict-section">
         <p class="chapter-number">03</p><h2>The unresolved Savoy chronology</h2>
@@ -301,15 +303,22 @@ def build_biography() -> str:
       </section>
       <section class="biography-section">
         <p class="chapter-number">04</p><h2>A possible later Zürich connection</h2>
+        <p>The 1922 guide names A. Kummer-Wenger with Hotel Victoria. A separate possible Gottlieb connection around 1924 remains unverified.</p>
+        {claim_card('CLAIM-VICTORIA-1922-KUMMER-WENGER')}
         {claim_card('CLAIM-GRAND-VICTORIA-1924')}
       </section>
       <section class="biography-section">
         <p class="chapter-number">05</p><h2>Baden-Baden and Hotel Messmer</h2>
-        <p>The later Hotel Messmer material ranges from marketplace metadata to previously inspected telephone-directory entries whose exact pages still need to be reacquired.</p>
-        {source_citations(['SRC-007', 'SRC-008', 'SRC-009'])}
+        <p>A contemporary notice dated 20 March 1931 gives the full name Sylvester Hermann Gottlieb, calls him a hotelier, and describes him as Pächter—lessee or operator—of Hotel Meßmer. It does not establish ownership of the property. An official historical account's reported 1930 closure conflicts with later directory leads and remains unresolved.</p>
+        {source_citations(['SRC-007', 'SRC-008', 'SRC-009', 'SRC-020', 'SRC-021'])}
         {claim_card('CLAIM-MESSMER-1929')}
+        {claim_card('CLAIM-MESSMER-CLOSED-SINCE-1930')}
+        {claim_card('CLAIM-SYLVESTER-BADEN-HOTELIER-1931')}
+        {claim_card('CLAIM-MESSMER-LESSEE-1931')}
+        {claim_card('CLAIM-GOTTLIEB-BANKRUPTCY-AUFHEBUNG-1931')}
         {claim_card('CLAIM-MESSMER-C1932')}
         {claim_card('CLAIM-MESSMER-1934')}
+        {claim_card('CLAIM-MESSMER-LASSMANN-PROPERTY')}
       </section>
       <section class="biography-section">
         <p class="chapter-number">06</p><h2>Later life</h2>
@@ -434,7 +443,7 @@ def build_sources() -> str:
     cards = []
     for source in sources:
         metadata = []
-        for label, field in [("Type", "type"), ("Date", "date_label"), ("Author", "author"), ("Repository", "repository"), ("Publisher", "publisher"), ("Accession", "accession")]:
+        for label, field in [("Type", "type"), ("Date", "date_label"), ("Author", "author"), ("Repository", "repository"), ("Publisher", "publisher"), ("Series", "series"), ("Printed page", "printed_page"), ("Section", "section"), ("Archival reference", "archival_reference"), ("Accession", "accession")]:
             if source.get(field) is not None:
                 metadata.append(f'<div><dt>{esc(label)}</dt><dd>{esc(source[field])}</dd></div>')
         descriptions = []
@@ -497,11 +506,18 @@ RESEARCH_QUESTIONS = [
     ("Baden-Baden", [
         "When did Gottlieb arrive in Baden-Baden?",
         "When did he take over Hotel Messmer?",
-        "Did he own the business, lease it, or simply manage it?",
+        "What were the terms and duration of his documented lease of Hotel Messmer?",
+        "Who legally owned the hotel property during Gottlieb's association with it?",
         "Was he proprietor in 1929?",
         "How long did he remain associated with the hotel?",
+        "Why do later directory leads appear after the hotel was reportedly closed in 1930?",
+        "Why was the bankruptcy proceeding listed under Aufhebungen in March 1931?",
         "Where did he live?",
         "Was he married, and did family members live with him?",
+    ]),
+    ("Business connections", [
+        "Was the Jakob Lassmann associated with Zürich's Baur en Ville the same person whose family was connected with Hotel Messmer?",
+        "What does the Hotel Messmer restitution file reveal about ownership, leases, and Gottlieb's contractual role?",
     ]),
     ("Death", [
         "When and where did Gottlieb die?",
@@ -512,14 +528,16 @@ RESEARCH_QUESTIONS = [
 ]
 
 RESEARCH_PRIORITIES = [
-    ("01", "Obtain the Zürich Meldekarte", "Potentially connect full name, birth data, addresses, and movement through one person-level record.", ["SRC-012"]),
-    ("02", "Inspect the 1938 Savoy centenary book", "Search the volume for Gottlieb and the management chronology.", ["SRC-010"]),
-    ("03", "Reacquire the 1911 advertisement", "Capture the original image, publication, exact date, page, permanent URL, and transcription.", ["SRC-003"]),
-    ("04", "Reacquire the 1924 ANNO item", "Verify or reject the Grand Hotel Victoria lead.", ["SRC-006"]),
-    ("05", "Reopen the 1932 and 1934 directory pages", "Capture exact scans and bibliographic data.", ["SRC-008", "SRC-009"]),
-    ("06", "Obtain the Baden-Baden Meldekarte", "Test the identity link between the German hotelier and the Vienna-born man.", ["SRC-014"]),
-    ("07", "Search Baden-Baden death registers", "Work forward from the last documented appearance without assuming a death year.", ["SRC-013"]),
-    ("08", "Search Zürich and Baden-Baden newspapers", "Look for appointments, hotel takeovers, advertisements, social notices, and obituaries.", ["SRC-015", "SRC-016", "SRC-017"]),
+    ("01", "Search Baden-Baden address books", "Check the 1928, 1930, 1932, 1935, and 1938 volumes for residence, occupation, household, and disappearance from the directory.", ["SRC-023"]),
+    ("02", "Inspect the 1929 Hotel Messmer advertisement", "Verify its date, wording, and Gottlieb's stated role from the original item.", ["SRC-007"]),
+    ("03", "Identify the 1931 bankruptcy court file", "Seek birth, nationality, residence, marital status, creditors, and business arrangements behind the notice.", ["SRC-020"]),
+    ("04", "Search the Schweizer Hotel-Revue", "Search 1908–1925 for appointments, departures, hotel changes, advertisements, and personal notices.", ["SRC-024"]),
+    ("05", "Search Zürich registration and address records", "Trace first appearance, residence, departure, and any person-level link to the full name.", ["SRC-005", "SRC-012"]),
+    ("06", "Inspect the 1938 Savoy centenary book", "Search the volume for Gottlieb, predecessors, successors, and the unresolved management chronology.", ["SRC-010"]),
+    ("07", "Reopen the 1932 and 1934 directory pages", "Capture exact scans, bibliographic data, and commercial wording before interpreting Inhaber.", ["SRC-008", "SRC-009"]),
+    ("08", "Investigate the Lassmann connection", "Test the possible Zürich–Baden property link without assuming it explains Gottlieb's move.", ["SRC-018", "SRC-021", "SRC-022", "SRC-026"]),
+    ("09", "Return to Vienna records with stronger identifiers", "Use any precise age, date, nationality, or residence recovered in Baden or Zürich to locate the original birth record.", ["SRC-011", "SRC-025"]),
+    ("10", "Search Baden-Baden death records and press", "Work forward after 1931 without assuming a death date or place.", ["SRC-013", "SRC-017"]),
 ]
 
 
@@ -561,7 +579,7 @@ def build_methodology() -> str:
       <section class="method-section"><h2>Evidence statuses</h2><div class="status-definitions">{status_rows}</div></section>
       <section class="method-section"><h2>Rules for historical claims</h2><ol class="rule-list"><li>Never invent facts, dates, citations, archival references, or relationships.</li><li>Every factual historical claim links to one or more stable source IDs.</li><li>Inference, family tradition, catalog metadata, OCR, and research leads remain labeled.</li><li>Primary and contemporary evidence is preferred, but contradictions remain visible.</li><li>A dead URL does not erase a source record; its bibliography and stable ID remain.</li></ol></section>
       <section class="method-section"><h2>Identity resolution</h2><p>Similar names and initials are not automatically the same person. The model keeps Vienna-born Sylvester Hermann Gottlieb separate from the source-attested hotelier S. H. Gottlieb until a municipal or other person-level record links them.</p>{claim_card('CLAIM-IDENTITY-SYLVESTER-AND-SH', compact=True)}</section>
-      <section class="method-section"><h2>Conflicting evidence</h2><p>The direct 1922 hotel listing and the secondary management chronology are both retained. The site does not select a convenient explanation.</p>{claim_card('CLAIM-SAVOY-1922', compact=True)}{claim_card('CLAIM-SAVOY-SECONDARY-GIGER-1918-1926', compact=True)}</section>
+      <section class="method-section"><h2>Conflicting evidence</h2><p>The direct 1922 hotel listing and the secondary Savoy chronology are both retained. Hotel Messmer's reported 1930 closure is likewise shown beside later directory leads. The site does not select a convenient explanation.</p>{claim_card('CLAIM-SAVOY-1922', compact=True)}{claim_card('CLAIM-SAVOY-SECONDARY-GIGER-1918-1926', compact=True)}{claim_card('CLAIM-MESSMER-CLOSED-SINCE-1930', compact=True)}{claim_card('CLAIM-MESSMER-1934', compact=True)}</section>
       <section class="method-section"><h2>Images and rights</h2><p>An old image is not assumed to be free to reproduce. Publication requires a recorded source, creator or publisher when known, date when known, holding institution, permanent URL, rights statement, permission status, caption, and source ID.</p></section>
     </section>
     """
@@ -580,7 +598,7 @@ def build_about() -> str:
         <div><strong>{len(people)}</strong><span>Identity-aware people</span></div>
       </section>
       <section class="about-section"><h2>Version 1</h2><p>This first public version turns the structured YAML research layer into nine static pages. There is no database, account system, or backend. Future evidence can be added to the source and claim files, validated, and regenerated into the site.</p></section>
-      <section class="about-section"><h2>Current bottom line</h2>{claim_card('CLAIM-SAVOY-1922', compact=True)}<p>Other findings suggest a broader career arc, but the project will not present those leads as established facts until their underlying records are reacquired and the person-level identity question is resolved.</p>{source_citations(['SRC-003', 'SRC-007', 'SRC-008', 'SRC-009'], 'Related leads')}</section>
+      <section class="about-section"><h2>Current bottom line</h2>{claim_card('CLAIM-BAUR-BIBLOS-OCR', compact=True)}{claim_card('CLAIM-SAVOY-1922', compact=True)}{claim_card('CLAIM-MESSMER-LESSEE-1931', compact=True)}<p>These sources establish two compatible hotel-career clusters, but they do not directly join the Zürich initials to the full Baden-Baden name or to the reported Vienna birth.</p>{claim_card('CLAIM-IDENTITY-SYLVESTER-AND-SH', compact=True)}</section>
       <section class="about-section"><h2>Corrections and future evidence</h2><p>New material should identify the source, its holding institution or publication, date and page where available, and the exact claim it supports or contradicts. Source records remain stable even if an external URL later becomes unavailable.</p><a class="button button-secondary" href="{internal_url('methodology.html')}">Read the evidence method</a></section>
     </div>
     """
@@ -622,7 +640,7 @@ def main() -> None:
         raise SystemExit("site/assets is missing")
     shutil.copytree(assets_source, DIST_DIR / "assets", dirs_exist_ok=True)
     for filename, builder in PAGES.items():
-        markup = builder()
+        markup = "\n".join(line.rstrip() for line in builder().splitlines()) + "\n"
         validate_base_paths(markup, filename)
         (DIST_DIR / filename).write_text(markup, encoding="utf-8", newline="\n")
     (DIST_DIR / ".nojekyll").write_text("", encoding="utf-8")

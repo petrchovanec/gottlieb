@@ -1,6 +1,8 @@
 schema_version: 1
 record_type: source
-source_of_truth: research.md
+source_of_truth:
+  - research/research.md
+  - "research/Sylvester Hermann Gottlieb — Research Update, 2026-08-16.md"
 
 sources:
   - id: SRC-001
@@ -15,6 +17,7 @@ sources:
     establishes: "The Zürich hotel listing identifies S. H. Gottlieb as director of Savoy-Baur en Ville."
     claims:
       - CLAIM-SAVOY-1922
+      - CLAIM-VICTORIA-1922-KUMMER-WENGER
     notes: "The dossier describes this as the strongest direct, dated evidence of the Zürich hotel position."
 
   - id: SRC-002
@@ -57,22 +60,21 @@ sources:
     caution: "Reacquire before formal public citation."
 
   - id: SRC-004
-    title: "Biblos Repository travel or hotel source"
-    type: indexed-digitized-source
-    repository: "Biblos / Politechnika Krakowska digital repository"
-    date_label: null
-    status: indexed-lead
+    title: "Über die Bernina nach Mailand"
+    type: contemporary-travel-guide
+    author: "Else Züblin-Spiller"
+    series: "Hendschels Luginsland, Heft 44"
+    place_of_publication: "Frankfurt am Main"
+    date_label: "1914"
+    printed_page: "127"
+    repository: "Biblioteka Politechniki Krakowskiej / Kraków University of Technology digital repository"
+    status: verified-direct
+    status_scope: "The digitized OCR was inspected directly; visual verification against the page image remains desirable."
     url: "https://repozytorium.biblos.pk.edu.pl/redo/resources/39044/file/scans/DEFAULT/OCR_rezultaty/100000298978_A_v1_200dpi_q60.pdf"
-    indexed_evidence: "OCR indicates 'S. H. Gottlieb, Direktor' near a Baur en Ville entry."
+    establishes: "The 1914 Zürich hotel material identifies S. H. Gottlieb as Direktor of the Savoy-Hotel Baur en Ville."
     claims:
       - CLAIM-BAUR-BIBLOS-OCR
-    missing:
-      - "publication title"
-      - "publication date"
-      - "page number"
-      - "source context"
-      - "exact wording checked against the scan"
-      - "whether the entry includes an image or other information"
+    caution: "Do not infer continuous service between the separately documented 1911, 1914, and 1922 points."
 
   - id: SRC-005
     title: "Zürich address books"
@@ -82,6 +84,7 @@ sources:
     date_label: "1911 example; suggested search period 1908-1925"
     status: research-lead
     url: "https://zop.zb.uzh.ch/items/c80bd44d-f36f-4010-bf4b-8dea80c36a23"
+    collection_url: "https://zop.zb.uzh.ch/collections/9e5087c3-e5f8-4b76-a106-3b5fc830a0f7"
     claims: []
     research_value:
       - "private residence"
@@ -284,4 +287,133 @@ sources:
       - CLAIM-SAVOY-SECONDARY-DUFFING-1909-1910
       - CLAIM-SAVOY-SECONDARY-GOTTLIEB-1910-1918
       - CLAIM-SAVOY-SECONDARY-GIGER-1918-1926
+      - CLAIM-LASSMANN-CROSS-HOTEL-HYPOTHESIS
+    notes: "The research update also identifies this secondary history as relevant to a reported 1899 Jakob Lassmann property connection, which remains part of an unresolved cross-city hypothesis."
     caution: "Do not assume that 'I. Gottlieb' is a typographical error or silently prefer this chronology over SRC-001."
+
+  - id: SRC-019
+    title: "Deutsche Nationalbibliothek bibliographic record for Über die Bernina nach Mailand"
+    type: national-library-catalog-record
+    repository: "Deutsche Nationalbibliothek"
+    date_label: "1914"
+    status: catalog-verified
+    url: "https://d-nb.info/362773971/about/html"
+    claims:
+      - CLAIM-BAUR-BIBLOS-OCR
+    corroborates_sources:
+      - SRC-004
+    notes: "Independently corroborates the bibliographic identity and dating of SRC-004; it does not establish the Gottlieb wording."
+
+  - id: SRC-020
+    title: "Badische Wirtschafts-Zeitung, Nr. 6"
+    type: contemporary-trade-newspaper
+    date_label: "20 March 1931"
+    printed_page: "68"
+    section: "III. Konkurse — b) Aufhebungen"
+    repository: "Badische Landesbibliothek Karlsruhe, Digital Collections"
+    status: verified-direct
+    url: "https://digital.blb-karlsruhe.de/blbz/periodical/pagetext/6703273?entity=7182816"
+    establishes: "The entry identifies Hotelier Sylvester Hermann Gottlieb as Pächter of Hotel Meßmer in Baden-Baden and places his bankruptcy proceeding in the Aufhebungen section."
+    claims:
+      - CLAIM-SYLVESTER-BADEN-HOTELIER-1931
+      - CLAIM-MESSMER-LESSEE-1931
+      - CLAIM-GOTTLIEB-BANKRUPTCY-AUFHEBUNG-1931
+    caution: "The entry does not state why the proceeding was terminated; do not infer mangels Masse or another reason."
+
+  - id: SRC-021
+    title: "Stadt Baden-Baden Gedenkbuch entry for Ernst Seelberg"
+    type: official-municipal-historical-account
+    repository: "Stadt Baden-Baden, Gedenkbuch"
+    date_label: null
+    status: official-secondary
+    status_scope: "The municipal account was inspected; its cited underlying archival files were not."
+    url: "https://gedenkbuch.baden-baden.de/person/seelberg-ernst/"
+    establishes: "The account describes Hotel Messmer as closed since 1930 and associates it with the Lassmann property complex."
+    claims:
+      - CLAIM-MESSMER-CLOSED-SINCE-1930
+      - CLAIM-MESSMER-LASSMANN-PROPERTY
+      - CLAIM-LASSMANN-CROSS-HOTEL-HYPOTHESIS
+    caution: "The reported 1930 closure complicates, but does not by itself invalidate, later telephone-directory listings."
+
+  - id: SRC-022
+    title: "Rückerstattung (Hotel Messmer, Baden-Baden)"
+    type: archival-file-catalog-record
+    archival_reference: "Staatsarchiv Freiburg, F 165/1 Nr. 98"
+    date_label: "1949–1952"
+    repository: "Landesarchiv Baden-Württemberg, Staatsarchiv Freiburg"
+    status: catalog-verified
+    status_scope: "The catalog entry was inspected; the underlying file was not."
+    url: "https://www.deutsche-digitale-bibliothek.de/item/R5C2HHRDAVSWZ4FL77Z5VU6HETGY3FWL"
+    claims:
+      - CLAIM-MESSMER-RESTITUTION-FILE-1949-1952
+    research_value:
+      - "legal ownership of Hotel Messmer"
+      - "leases and financial burdens"
+      - "business structure before 1933"
+      - "Gottlieb's contractual relationship to the property"
+    caution: "Catalog-described contents are not a substitute for inspecting the archival file."
+
+  - id: SRC-023
+    title: "Baden-Baden historical address books"
+    type: city-address-book-collection
+    repository: "Stadtarchiv Baden-Baden — Digitaler Lesesaal"
+    date_label: "1928, 1930, 1932, 1935, and 1938"
+    status: high-priority-research-lead
+    url: "https://www.baden-baden.de/kultur-und-engagement/stadtmuseum--stadtarchiv/stadtarchiv/digitaler-lesesaal"
+    example_url: "https://digitales-stadtarchiv.baden-baden.de/adressbuecher/index.php?catalog=1930_Adressbuch-Baden-Baden"
+    claims: []
+    research_targets:
+      - CLAIM-IDENTITY-SYLVESTER-AND-SH
+      - CLAIM-MESSMER-LESSEE-1931
+    research_value:
+      - "first appearance in Baden-Baden"
+      - "residence and occupation"
+      - "spouse or household information"
+      - "whether Gottlieb lived at the hotel"
+      - "date of disappearance from the directory"
+
+  - id: SRC-024
+    title: "Schweizer Hotel-Revue / Revue suisse des hôtels"
+    type: digitized-periodical-run
+    date_label: "1892–1949; priority search period 1908–1925"
+    repository: "E-Periodica"
+    status: high-priority-research-lead
+    url: "https://www.e-periodica.ch/digbib/volumes?UID=htr-001"
+    claims: []
+    research_targets:
+      - CLAIM-SAVOY-1911
+      - CLAIM-BAUR-BIBLOS-OCR
+      - CLAIM-SAVOY-1922
+      - CLAIM-GRAND-VICTORIA-1924
+    research_value:
+      - "appointment and departure announcements"
+      - "professional-association activity"
+      - "hotel management changes"
+      - "advertisements and personal notices"
+
+  - id: SRC-025
+    title: "Webtrees entry for Sylvester Hermann Gottlieb"
+    type: derivative-genealogical-tree
+    repository: "Jehli-Kamm Webtrees"
+    individual_id: "I64358"
+    date_label: null
+    status: indexed-lead
+    status_scope: "The result exists, but its underlying data was not inspected."
+    url: "https://baum.jehli.ch/webtrees/index.php?route=%2Fwebtrees%2Ftree%2Fjehli-kamm%2Findividual%2FI64358%2FSylvester-Hermann-Gottlieb"
+    claims: []
+    research_targets:
+      - CLAIM-BIRTH-VIENNA-1871
+      - CLAIM-IDENTITY-SYLVESTER-AND-SH
+    caution: "Do not use the tree as proof of birth, parentage, spouse, children, or death; use it only to locate primary records."
+
+  - id: SRC-026
+    title: "Stadt Baden-Baden Gedenkbuch entry for Margarete Seelberg, née Lassmann"
+    type: official-municipal-historical-account
+    repository: "Stadt Baden-Baden, Gedenkbuch"
+    date_label: null
+    status: official-secondary
+    url: "https://gedenkbuch.baden-baden.de/person/seelberg-margarete-geb-lassmann/"
+    claims:
+      - CLAIM-LASSMANN-CROSS-HOTEL-HYPOTHESIS
+    notes: "Provides evidence about the Baden-Baden Lassmann family context relevant to a possible, unresolved Zürich–Baden property connection."
+    caution: "It does not prove that the Jakob Lassmann associated with Zürich's Baur en Ville was the same person connected with the Baden-Baden property."

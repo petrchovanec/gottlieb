@@ -53,20 +53,40 @@ class PageParser(HTMLParser):
                 self.links.append((attribute, values[attribute] or ""))
 
 
-def load_yaml(filename: str, key: str) -> list[dict]:
-    return yaml.safe_load((DATA / filename).read_text(encoding="utf-8"))[key]
+def load_yaml(filename: str) -> dict:
+    return yaml.safe_load((DATA / filename).read_text(encoding="utf-8"))
 
 
 def validate_data() -> tuple[list[str], dict[str, set[str]]]:
     errors: list[str] = []
-    datasets = {
-        "sources": load_yaml("sources.yml", "sources"),
-        "claims": load_yaml("claims.yml", "claims"),
-        "events": load_yaml("timeline.yml", "events"),
-        "people": load_yaml("people.yml", "people"),
-        "places": load_yaml("places.yml", "places"),
-        "organizations": load_yaml("organizations.yml", "organizations"),
+    dataset_files = {
+        "sources": ("sources.yml", "sources"),
+        "claims": ("claims.yml", "claims"),
+        "events": ("timeline.yml", "events"),
+        "people": ("people.yml", "people"),
+        "places": ("places.yml", "places"),
+        "organizations": ("organizations.yml", "organizations"),
     }
+    datasets: dict[str, list[dict]] = {}
+    expected_research_files: tuple[str, ...] | None = None
+    for kind, (filename, key) in dataset_files.items():
+        document = load_yaml(filename)
+        research_files = document.get("source_of_truth")
+        if not isinstance(research_files, list) or not research_files:
+            errors.append(f"{filename}: source_of_truth must be a non-empty list")
+        else:
+            normalized = tuple(research_files)
+            if expected_research_files is None:
+                expected_research_files = normalized
+            elif normalized != expected_research_files:
+                errors.append(f"{filename}: source_of_truth differs from the other datasets")
+            for research_file in research_files:
+                research_path = ROOT / research_file
+                if not research_path.is_file():
+                    errors.append(f"{filename}: missing research file {research_file}")
+                if research_path.parent != ROOT / "research":
+                    errors.append(f"{filename}: research file is outside research/: {research_file}")
+        datasets[kind] = document[key]
     ids: dict[str, set[str]] = {}
     for kind, records in datasets.items():
         record_ids = [record.get("id") for record in records]
@@ -77,7 +97,7 @@ def validate_data() -> tuple[list[str], dict[str, set[str]]]:
         ids[kind] = set(record_ids)
 
     reference_fields = {
-        "sources": {"claims": "claims", "research_targets": "claims"},
+        "sources": {"claims": "claims", "research_targets": "claims", "corroborates_sources": "sources"},
         "claims": {"subjects": "people", "organizations": "organizations", "places": "places", "sources": "sources", "conflicts_with": "claims", "potential_resolution_sources": "sources", "research_targets": "sources"},
         "events": {"subjects": "people", "organizations": "organizations", "places": "places", "claims": "claims", "sources": "sources", "research_targets": "sources"},
         "people": {"claims": "claims", "source_mentions": "sources"},
@@ -101,9 +121,13 @@ def validate_data() -> tuple[list[str], dict[str, set[str]]]:
                         errors.append(f"{record['id']}.identity_links: missing {link.get('target')}")
 
     for claim in datasets["claims"]:
+        if not isinstance(claim.get("sources", []), list):
+            errors.append(f"{claim['id']}: sources must remain an array")
         if claim["status"] != "open-question" and not claim.get("sources"):
             errors.append(f"{claim['id']}: non-open claim has no source")
     for event in datasets["events"]:
+        if not isinstance(event.get("sources", []), list):
+            errors.append(f"{event['id']}: sources must remain an array")
         if event["status"] != "open-question" and not event.get("sources"):
             errors.append(f"{event['id']}: non-open event has no source")
     return errors, ids
@@ -125,15 +149,18 @@ def local_target(value: str, current_page: Path) -> tuple[Path | None, str | Non
     return DIST / path, parsed.fragment or None
 
 
-def validate_pages(source_ids: set[str]) -> list[str]:
+def validate_pages(source_ids: set[str], claim_ids: set[str]) -> list[str]:
     errors: list[str] = []
     missing_pages = REQUIRED_PAGES - {path.name for path in DIST.glob("*.html")}
     if missing_pages:
         errors.append(f"Missing pages: {', '.join(sorted(missing_pages))}")
     parsed_pages: dict[Path, PageParser] = {}
+    generated_markup: list[str] = []
     for page in DIST.glob("*.html"):
         parser = PageParser()
-        parser.feed(page.read_text(encoding="utf-8"))
+        markup = page.read_text(encoding="utf-8")
+        generated_markup.append(markup)
+        parser.feed(markup)
         parsed_pages[page.resolve()] = parser
         if not parser.has_title:
             errors.append(f"{page.name}: missing title")
@@ -170,6 +197,10 @@ def validate_pages(source_ids: set[str]) -> list[str]:
         missing_source_anchors = source_ids - source_page.ids
         if missing_source_anchors:
             errors.append(f"sources.html: missing stable IDs {', '.join(sorted(missing_source_anchors))}")
+    combined_markup = "\n".join(generated_markup)
+    missing_claim_ids = {claim_id for claim_id in claim_ids if claim_id not in combined_markup}
+    if missing_claim_ids:
+        errors.append(f"generated site: missing claim IDs {', '.join(sorted(missing_claim_ids))}")
     return errors
 
 
@@ -177,7 +208,7 @@ def main() -> None:
     if not DIST.exists():
         raise SystemExit("dist/ is missing; build the site first")
     data_errors, ids = validate_data()
-    page_errors = validate_pages(ids["sources"])
+    page_errors = validate_pages(ids["sources"], ids["claims"])
     errors = data_errors + page_errors
     if errors:
         print("Site validation failed:")

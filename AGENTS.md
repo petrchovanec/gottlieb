@@ -1,8 +1,9 @@
 # Research and Evidence Rules
 
-These instructions apply to the entire repository. `research.md` is the current
-source-of-truth research dossier. The files in `data/` are structured
-representations of that dossier; they do not supersede it.
+These instructions apply to the entire repository. The Markdown files in
+`research/` are the source-of-truth research dossiers and audit trail. The files
+in `data/` are structured representations of those dossiers; they do not
+supersede them.
 
 ## Non-negotiable historical standards
 
@@ -37,6 +38,9 @@ without promoting them:
   be reacquired before publication where possible.
 - `catalog-verified`: the source's existence and bibliographic identity are
   verified, but its contents have not been inspected.
+- `official-secondary`: an official or archival institution's secondary
+  historical account was inspected, while any underlying primary files remain
+  separately qualified.
 - `user-supplied`: supplied through family or genealogical research and not yet
   independently established here.
 - `indexed-lead`: indicated by a catalog, result, listing, OCR index, or similar
@@ -96,15 +100,21 @@ For every new source:
 
 ## Current mandatory cautions
 
-- The source-attested hotelier `S. H. Gottlieb` is not yet conclusively linked to
-  Vienna-born Sylvester Hermann Gottlieb. Treat that identification as a working
-  hypothesis pending a municipal or other person-level record.
+- The Zürich hotelier `S. H. Gottlieb`, the full-name Baden-Baden hotelier
+  `Sylvester Hermann Gottlieb`, and the reported Vienna-born 1871 identity form
+  strongly compatible but still distinct evidence layers. Do not merge them
+  until a direct person-level record links the careers and birth information.
 - Do not state as established fact that Gottlieb became director of Baur en Ville
   in exactly 1910, left in 1918, directed Grand Hotel Victoria in 1924, owned the
   Hotel Messmer property, died in 1934, or died in Baden-Baden.
+- Describe the directly attested 1931 Hotel Messmer role as `Pächter`, lessee,
+  or operator. Do not infer the reason that the bankruptcy proceeding appeared
+  in the `Aufhebungen` section.
 - Do not decide that `I. Gottlieb` in the secondary Savoy chronology is a typo.
 - Preserve the conflict between the direct 1922 listing of `S. H. Gottlieb` as
   director and the secondary chronology assigning Fritz Giger to 1918-1926.
+- Preserve the conflict between the official account reporting Hotel Messmer
+  closed since 1930 and the un-reacquired later telephone-directory findings.
 
 ## Images and publication
 
