@@ -1369,7 +1369,9 @@ Suggested labels:
 hermann-gottlieb/
 │
 ├── README.md
-├── RESEARCH.md
+├── research/
+│   ├── research.md
+│   └── Sylvester Hermann Gottlieb — Research Update, 2026-08-16.md
 ├── AGENTS.md
 │
 ├── data/

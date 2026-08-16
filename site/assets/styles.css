@@ -386,6 +386,7 @@ code,
 }
 
 .status-verified-direct { color: #26472d; background: #dfeadf; border-color: #9fb7a1; }
+.status-official-secondary { color: #3f4f2b; background: #e6ead8; border-color: #aab58c; }
 .status-prior-chat-verified { color: #304d5a; background: #e0eaed; border-color: #9cb5be; }
 .status-catalog-verified { color: #524269; background: #e9e3f0; border-color: #b4a6c7; }
 .status-user-supplied { color: #73551f; background: #f2ead0; border-color: #c9b36d; }
@@ -422,6 +423,8 @@ code,
 
 .evidence-card:has(.status-verified-direct)::before,
 .source-card:has(.status-verified-direct)::before { background: #54755a; }
+.evidence-card:has(.status-official-secondary)::before,
+.source-card:has(.status-official-secondary)::before { background: #7a8754; }
 .evidence-card:has(.status-conflict)::before,
 .source-card:has(.status-conflict)::before { background: #913c36; }
 .evidence-card:has(.status-indexed-lead)::before,

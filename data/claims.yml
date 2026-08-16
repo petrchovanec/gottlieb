@@ -1,6 +1,8 @@
 schema_version: 1
 record_type: claim
-source_of_truth: research.md
+source_of_truth:
+  - research/research.md
+  - "research/Sylvester Hermann Gottlieb — Research Update, 2026-08-16.md"
 
 claims:
   - id: CLAIM-BIRTH-VIENNA-1871
@@ -17,7 +19,7 @@ claims:
     public_wording: "Born in Vienna in 1871 according to genealogical research."
 
   - id: CLAIM-IDENTITY-SYLVESTER-AND-SH
-    statement: "The identification of the hotelier S. H. Gottlieb with Vienna-born Sylvester Hermann Gottlieb is a working hypothesis, not a conclusive identification."
+    statement: "Matching initials, profession, and chronology strongly support identifying the Zürich hotelier S. H. Gottlieb with Baden-Baden hotelier Sylvester Hermann Gottlieb, but no direct linking record has yet made the identification conclusive."
     kind: identity-hypothesis
     status: open-question
     subjects:
@@ -27,14 +29,16 @@ claims:
       - SRC-001
       - SRC-002
       - SRC-003
+      - SRC-004
       - SRC-008
       - SRC-009
       - SRC-011
+      - SRC-020
     potential_resolution_sources:
       - SRC-012
       - SRC-014
-    caution: "Do not merge the two person records without a municipal or other person-level record linking the full name and birth information to the hotel career."
-    public_wording: "The identification is the working conclusion of the research project and is being tested against municipal and archival records."
+    caution: "Keep the Zürich initials record, the full-name Baden-Baden record, and the reported Vienna birth layer distinct until a municipal or other person-level source directly links the careers and birth information."
+    public_wording: "The Zürich and Baden-Baden hotel records are strongly compatible, but no source yet directly joins the two careers or links them conclusively to the reported Vienna birth."
 
   - id: CLAIM-SAVOY-1911
     statement: "Earlier research found a 1911 advertisement identifying S. H. Gottlieb as director of Baur en Ville or Savoy."
@@ -82,10 +86,25 @@ claims:
       - CLAIM-SAVOY-SECONDARY-GIGER-1918-1926
     caution: "This identifies S. H. Gottlieb, but does not by itself prove that he was Sylvester Hermann Gottlieb."
 
+  - id: CLAIM-VICTORIA-1922-KUMMER-WENGER
+    statement: "The same 1922 travel guide that lists S. H. Gottlieb at Savoy-Baur en Ville lists Zürich's Hotel Victoria under A. Kummer-Wenger."
+    kind: management-listing
+    status: verified-direct
+    subjects:
+      - PERSON-A-KUMMER-WENGER
+    organizations:
+      - ORG-GRAND-HOTEL-VICTORIA
+    places:
+      - PLACE-ZURICH
+    sources:
+      - SRC-001
+    caution: "This does not rule out a different, earlier, later, or subordinate Gottlieb association with a hotel named Victoria; it records only the 1922 listing."
+
   - id: CLAIM-BAUR-BIBLOS-OCR
-    statement: "Indexed OCR from a Biblos Repository source places 'S. H. Gottlieb, Direktor' near a Baur en Ville entry."
-    kind: employment-association
-    status: indexed-lead
+    statement: "A 1914 contemporary travel guide describes S. H. Gottlieb as Direktor of the Savoy-Hotel Baur en Ville in Zürich."
+    kind: employment
+    status: verified-direct
+    status_scope: "The digitized OCR and bibliographic record were inspected; visual comparison with the page image remains desirable."
     subjects:
       - PERSON-SH-GOTTLIEB-HOTELIER
     organizations:
@@ -94,7 +113,8 @@ claims:
       - PLACE-ZURICH
     sources:
       - SRC-004
-    caution: "The publication title, year, page, context, and scan wording have not been verified."
+      - SRC-019
+    caution: "This dated point does not prove continuous service from 1911 through 1922 or identify S. H. Gottlieb conclusively with the full-name Baden-Baden hotelier."
 
   - id: CLAIM-SAVOY-SECONDARY-DUFFING-1909-1910
     statement: "A secondary Savoy history assigns Hermann Duffing a management period from 1909 to 1910."
@@ -182,6 +202,8 @@ claims:
       - PLACE-BADEN-BADEN
     sources:
       - SRC-008
+    conflicts_with:
+      - CLAIM-MESSMER-CLOSED-SINCE-1930
     caution: "Reacquire the exact edition, page, column, scan, and wording. Interpret Inhaber in its commercial context."
 
   - id: CLAIM-MESSMER-1934
@@ -196,7 +218,111 @@ claims:
       - PLACE-BADEN-BADEN
     sources:
       - SRC-009
+    conflicts_with:
+      - CLAIM-MESSMER-CLOSED-SINCE-1930
     caution: "Do not infer that Gottlieb was alive throughout 1934, personally owned the property, lived at the hotel, or died after a particular date. Directory publication lag is possible."
+
+  - id: CLAIM-SYLVESTER-BADEN-HOTELIER-1931
+    statement: "A contemporary trade newspaper dated 20 March 1931 identifies Sylvester Hermann Gottlieb in Baden-Baden as a hotelier."
+    kind: occupation-and-location
+    status: verified-direct
+    subjects:
+      - PERSON-SYLVESTER-HERMANN-GOTTLIEB
+    places:
+      - PLACE-BADEN-BADEN
+    sources:
+      - SRC-020
+    caution: "This full-name Baden-Baden record strongly supports, but does not directly prove, identity with the Zürich hotel director known by initials."
+
+  - id: CLAIM-MESSMER-LESSEE-1931
+    statement: "The 20 March 1931 entry describes Sylvester Hermann Gottlieb as Pächter—lessee or operator—of Hotel Meßmer in Baden-Baden."
+    kind: business-role
+    status: verified-direct
+    subjects:
+      - PERSON-SYLVESTER-HERMANN-GOTTLIEB
+    organizations:
+      - ORG-HOTEL-MESSMER
+    places:
+      - PLACE-BADEN-BADEN
+    sources:
+      - SRC-020
+    caution: "Pächter does not establish ownership of the hotel property."
+
+  - id: CLAIM-GOTTLIEB-BANKRUPTCY-AUFHEBUNG-1931
+    statement: "By 20 March 1931, a bankruptcy proceeding concerning hotelier Sylvester Hermann Gottlieb appeared in the Aufhebungen section for the Baden-Baden court district."
+    kind: legal-proceeding
+    status: verified-direct
+    subjects:
+      - PERSON-SYLVESTER-HERMANN-GOTTLIEB
+    organizations:
+      - ORG-HOTEL-MESSMER
+    places:
+      - PLACE-BADEN-BADEN
+    sources:
+      - SRC-020
+    caution: "The notice does not give the reason for termination. Do not infer mangels Masse or any other cause."
+
+  - id: CLAIM-MESSMER-CLOSED-SINCE-1930
+    statement: "An official Baden-Baden historical account reports that Hotel Messmer had been closed since 1930."
+    kind: hotel-status
+    status: official-secondary
+    organizations:
+      - ORG-HOTEL-MESSMER
+    places:
+      - PLACE-BADEN-BADEN
+    sources:
+      - SRC-021
+    conflicts_with:
+      - CLAIM-MESSMER-C1932
+      - CLAIM-MESSMER-1934
+    caution: "The account's underlying archival files were not inspected. Later directory listings may reflect publication lag, a retained business listing, a discrepancy in the retrospective date, or another unresolved explanation."
+
+  - id: CLAIM-MESSMER-LASSMANN-PROPERTY
+    statement: "An official Baden-Baden historical account associates the Hotel Messmer property with the Lassmann property complex."
+    kind: property-context
+    status: official-secondary
+    subjects:
+      - PERSON-JAKOB-LASSMANN
+    organizations:
+      - ORG-HOTEL-MESSMER
+    places:
+      - PLACE-BADEN-BADEN
+    sources:
+      - SRC-021
+    caution: "This does not establish every ownership interest or contractual arrangement, and it reinforces that Gottlieb's documented role should be described as lessee rather than property owner."
+
+  - id: CLAIM-MESSMER-RESTITUTION-FILE-1949-1952
+    statement: "A cataloged Staatsarchiv Freiburg restitution file concerning Hotel Messmer spans 1949–1952 and is described as containing material about the Jakob Lassmann heirs."
+    kind: archival-research-lead
+    status: catalog-verified
+    subjects:
+      - PERSON-JAKOB-LASSMANN
+    organizations:
+      - ORG-HOTEL-MESSMER
+      - ORG-STAATSARCHIV-FREIBURG
+    places:
+      - PLACE-BADEN-BADEN
+    sources:
+      - SRC-022
+    caution: "Only the catalog entry has been inspected; the file's contents cannot yet support biographical conclusions about Gottlieb."
+
+  - id: CLAIM-LASSMANN-CROSS-HOTEL-HYPOTHESIS
+    statement: "It remains unresolved whether the Jakob Lassmann associated in secondary material with Baur en Ville was the same Jakob Lassmann whose family was connected with the Hotel Messmer property."
+    kind: identity-and-business-hypothesis
+    status: research-lead
+    subjects:
+      - PERSON-JAKOB-LASSMANN
+    organizations:
+      - ORG-SAVOY-BAUR-EN-VILLE
+      - ORG-HOTEL-MESSMER
+    places:
+      - PLACE-ZURICH
+      - PLACE-BADEN-BADEN
+    sources:
+      - SRC-018
+      - SRC-021
+      - SRC-026
+    caution: "Even a confirmed cross-city property identity would not prove that Lassmann arranged or caused Gottlieb's move from Zürich to Baden-Baden."
 
   - id: CLAIM-SAVOY-CENTENARY-1938
     statement: "Hans Schulthess's 64-page illustrated Savoy centenary history was published in Zürich in 1938 and is cataloged by the Wolfsonian."

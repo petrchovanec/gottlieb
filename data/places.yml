@@ -1,6 +1,8 @@
 schema_version: 1
 record_type: place
-source_of_truth: research.md
+source_of_truth:
+  - research/research.md
+  - "research/Sylvester Hermann Gottlieb — Research Update, 2026-08-16.md"
 
 places:
   - id: PLACE-VIENNA
@@ -23,12 +25,14 @@ places:
       - CLAIM-BAUR-POSTCARD
       - CLAIM-SAVOY-1922
       - CLAIM-BAUR-BIBLOS-OCR
+      - CLAIM-VICTORIA-1922-KUMMER-WENGER
       - CLAIM-SAVOY-SECONDARY-DUFFING-1909-1910
       - CLAIM-SAVOY-SECONDARY-GOTTLIEB-1910-1918
       - CLAIM-SAVOY-SECONDARY-GIGER-1918-1926
       - CLAIM-GRAND-VICTORIA-1924
       - CLAIM-SAVOY-CENTENARY-1938
       - CLAIM-ZURICH-MELDEKARTE-RESEARCH-VALUE
+      - CLAIM-LASSMANN-CROSS-HOTEL-HYPOTHESIS
     source_mentions:
       - SRC-001
       - SRC-002
@@ -41,6 +45,8 @@ places:
       - SRC-015
       - SRC-016
       - SRC-018
+      - SRC-019
+      - SRC-024
     research_role: "Principal location of the Savoy-Baur en Ville career research and municipal-record search."
 
   - id: PLACE-BADEN-BADEN
@@ -49,8 +55,15 @@ places:
     country: "Germany"
     claims:
       - CLAIM-MESSMER-1929
+      - CLAIM-MESSMER-CLOSED-SINCE-1930
+      - CLAIM-SYLVESTER-BADEN-HOTELIER-1931
+      - CLAIM-MESSMER-LESSEE-1931
+      - CLAIM-GOTTLIEB-BANKRUPTCY-AUFHEBUNG-1931
       - CLAIM-MESSMER-C1932
       - CLAIM-MESSMER-1934
+      - CLAIM-MESSMER-LASSMANN-PROPERTY
+      - CLAIM-MESSMER-RESTITUTION-FILE-1949-1952
+      - CLAIM-LASSMANN-CROSS-HOTEL-HYPOTHESIS
       - CLAIM-DEATH-UNRESOLVED
     source_mentions:
       - SRC-007
@@ -59,7 +72,12 @@ places:
       - SRC-013
       - SRC-014
       - SRC-017
-    research_role: "Location of Hotel Messmer and the later-life, municipal, business, and death-record research."
+      - SRC-020
+      - SRC-021
+      - SRC-022
+      - SRC-023
+      - SRC-026
+    research_role: "Location of the directly attested 1931 Hotel Messmer lease, the unresolved closure/directory chronology, and later-life, municipal, business, and death-record research."
     caution: "The dossier does not establish that Sylvester Hermann Gottlieb died in Baden-Baden."
 
   - id: PLACE-WERDERSTRASSE-AM-KURHAUS

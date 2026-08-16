@@ -1,6 +1,8 @@
 schema_version: 1
 record_type: organization
-source_of_truth: research.md
+source_of_truth:
+  - research/research.md
+  - "research/Sylvester Hermann Gottlieb — Research Update, 2026-08-16.md"
 
 organizations:
   - id: ORG-SAVOY-BAUR-EN-VILLE
@@ -15,13 +17,14 @@ organizations:
     place: PLACE-ZURICH
     claims:
       - CLAIM-SAVOY-1911
+      - CLAIM-BAUR-BIBLOS-OCR
       - CLAIM-BAUR-POSTCARD
       - CLAIM-SAVOY-1922
-      - CLAIM-BAUR-BIBLOS-OCR
       - CLAIM-SAVOY-SECONDARY-DUFFING-1909-1910
       - CLAIM-SAVOY-SECONDARY-GOTTLIEB-1910-1918
       - CLAIM-SAVOY-SECONDARY-GIGER-1918-1926
       - CLAIM-SAVOY-CENTENARY-1938
+      - CLAIM-LASSMANN-CROSS-HOTEL-HYPOTHESIS
     source_mentions:
       - SRC-001
       - SRC-002
@@ -37,10 +40,12 @@ organizations:
     type: hotel
     place: PLACE-ZURICH
     claims:
+      - CLAIM-VICTORIA-1922-KUMMER-WENGER
       - CLAIM-GRAND-VICTORIA-1924
     source_mentions:
+      - SRC-001
       - SRC-006
-    caution: "The connection to S. H. Gottlieb is a needs-recheck lead; his role is not established."
+    caution: "A. Kummer-Wenger is listed with the hotel in 1922. The separate 1924 Gottlieb connection remains a needs-recheck lead; Gottlieb's role is not established."
 
   - id: ORG-HOTEL-MESSMER
     preferred_name: "Hotel Messmer"
@@ -48,15 +53,25 @@ organizations:
     place: PLACE-BADEN-BADEN
     claims:
       - CLAIM-MESSMER-1929
+      - CLAIM-MESSMER-CLOSED-SINCE-1930
+      - CLAIM-SYLVESTER-BADEN-HOTELIER-1931
+      - CLAIM-MESSMER-LESSEE-1931
+      - CLAIM-GOTTLIEB-BANKRUPTCY-AUFHEBUNG-1931
       - CLAIM-MESSMER-C1932
       - CLAIM-MESSMER-1934
+      - CLAIM-MESSMER-LASSMANN-PROPERTY
+      - CLAIM-MESSMER-RESTITUTION-FILE-1949-1952
+      - CLAIM-LASSMANN-CROSS-HOTEL-HYPOTHESIS
     source_mentions:
       - SRC-007
       - SRC-008
       - SRC-009
       - SRC-014
       - SRC-017
-    caution: "Do not infer ownership of the property, residence at the hotel, or an exact tenure from the current evidence."
+      - SRC-020
+      - SRC-021
+      - SRC-022
+    caution: "Gottlieb is directly documented as Pächter—lessee or operator—in 1931, not as proven property owner. The reported 1930 closure and later directory references remain in conflict."
 
   - id: ORG-INTERNET-ARCHIVE
     preferred_name: "Internet Archive"
@@ -120,9 +135,15 @@ organizations:
     claims:
       - CLAIM-DEATH-UNRESOLVED
       - CLAIM-IDENTITY-SYLVESTER-AND-SH
+      - CLAIM-MESSMER-CLOSED-SINCE-1930
+      - CLAIM-MESSMER-LASSMANN-PROPERTY
+      - CLAIM-LASSMANN-CROSS-HOTEL-HYPOTHESIS
     source_mentions:
       - SRC-013
       - SRC-014
+      - SRC-021
+      - SRC-023
+      - SRC-026
 
   - id: ORG-NEUE-ZURCHER-ZEITUNG
     preferred_name: "Neue Zürcher Zeitung"
@@ -158,3 +179,43 @@ organizations:
     source_mentions:
       - SRC-018
     caution: "Its management chronology conflicts with the direct 1922 source."
+
+  - id: ORG-DEUTSCHE-NATIONALBIBLIOTHEK
+    preferred_name: "Deutsche Nationalbibliothek"
+    type: national-library
+    claims: []
+    source_mentions:
+      - SRC-019
+
+  - id: ORG-BADISCHE-LANDESBIBLIOTHEK
+    preferred_name: "Badische Landesbibliothek Karlsruhe"
+    type: library-and-digital-repository
+    claims:
+      - CLAIM-SYLVESTER-BADEN-HOTELIER-1931
+      - CLAIM-MESSMER-LESSEE-1931
+      - CLAIM-GOTTLIEB-BANKRUPTCY-AUFHEBUNG-1931
+    source_mentions:
+      - SRC-020
+
+  - id: ORG-STAATSARCHIV-FREIBURG
+    preferred_name: "Staatsarchiv Freiburg"
+    type: state-archive
+    claims:
+      - CLAIM-MESSMER-RESTITUTION-FILE-1949-1952
+    source_mentions:
+      - SRC-022
+
+  - id: ORG-E-PERIODICA
+    preferred_name: "E-Periodica"
+    type: digital-periodical-repository
+    claims: []
+    source_mentions:
+      - SRC-024
+
+  - id: ORG-JEHLI-WEBTREES
+    preferred_name: "Jehli-Kamm Webtrees"
+    type: derivative-genealogical-database
+    claims: []
+    source_mentions:
+      - SRC-025
+    caution: "The tree is a research lead only and must not be used as proof of biographical details."

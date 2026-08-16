@@ -1,6 +1,8 @@
 schema_version: 1
 record_type: timeline-event
-source_of_truth: research.md
+source_of_truth:
+  - research/research.md
+  - "research/Sylvester Hermann Gottlieb — Research Update, 2026-08-16.md"
 
 model_notes:
   date_label: "Human-readable date wording preserved from the dossier."
@@ -59,6 +61,25 @@ events:
       - SRC-003
     caution: "Reacquire the exact advertisement and metadata before formal public citation."
 
+  - id: EVT-1914-SAVOY
+    date_label: "1914"
+    temporal_precision: year
+    event: "A contemporary travel guide describes S. H. Gottlieb as Direktor of the Savoy-Hotel Baur en Ville."
+    status: verified-direct
+    status_scope: "The digitized OCR and bibliographic record were inspected; visual page-image comparison remains desirable."
+    subjects:
+      - PERSON-SH-GOTTLIEB-HOTELIER
+    places:
+      - PLACE-ZURICH
+    organizations:
+      - ORG-SAVOY-BAUR-EN-VILLE
+    claims:
+      - CLAIM-BAUR-BIBLOS-OCR
+    sources:
+      - SRC-004
+      - SRC-019
+    caution: "This does not prove uninterrupted service between the separately documented dates."
+
   - id: EVT-BEFORE-OR-AROUND-1922-POSTCARD
     date_label: "before or around 1922"
     temporal_precision: before-or-around-year
@@ -94,6 +115,23 @@ events:
       - SRC-001
     caution: "The source does not by itself prove that S. H. Gottlieb was Sylvester Hermann Gottlieb."
 
+  - id: EVT-1922-VICTORIA
+    date_label: "1922"
+    temporal_precision: year
+    event: "The same travel guide lists Zürich's Hotel Victoria under A. Kummer-Wenger."
+    status: verified-direct
+    subjects:
+      - PERSON-A-KUMMER-WENGER
+    places:
+      - PLACE-ZURICH
+    organizations:
+      - ORG-GRAND-HOTEL-VICTORIA
+    claims:
+      - CLAIM-VICTORIA-1922-KUMMER-WENGER
+    sources:
+      - SRC-001
+    caution: "This records the 1922 listing and does not by itself resolve the separate 1924 Gottlieb lead."
+
   - id: EVT-1924-GRAND-HOTEL-VICTORIA
     date_label: "1924"
     temporal_precision: year
@@ -128,10 +166,45 @@ events:
       - SRC-007
     caution: "The underlying advertisement has not been transcribed or independently preserved."
 
+  - id: EVT-1930-HOTEL-MESSMER-CLOSED
+    date_label: "since 1930 (reported retrospectively)"
+    temporal_precision: reported-year
+    event: "An official Baden-Baden historical account reports that Hotel Messmer had been closed since 1930."
+    status: official-secondary
+    subjects: []
+    places:
+      - PLACE-BADEN-BADEN
+    organizations:
+      - ORG-HOTEL-MESSMER
+    claims:
+      - CLAIM-MESSMER-CLOSED-SINCE-1930
+    sources:
+      - SRC-021
+    caution: "The underlying archival files were not inspected, and later directory listings create an unresolved conflict."
+
+  - id: EVT-1931-HOTEL-MESSMER
+    date_label: "20 March 1931"
+    temporal_precision: exact-publication-date
+    event: "A contemporary notice identifies Sylvester Hermann Gottlieb as a hotelier and Pächter of Hotel Meßmer in Baden-Baden."
+    status: verified-direct
+    subjects:
+      - PERSON-SYLVESTER-HERMANN-GOTTLIEB
+    places:
+      - PLACE-BADEN-BADEN
+    organizations:
+      - ORG-HOTEL-MESSMER
+    claims:
+      - CLAIM-SYLVESTER-BADEN-HOTELIER-1931
+      - CLAIM-MESSMER-LESSEE-1931
+      - CLAIM-GOTTLIEB-BANKRUPTCY-AUFHEBUNG-1931
+    sources:
+      - SRC-020
+    caution: "Pächter means lessee or operator, not proven property owner; the notice does not state why the bankruptcy proceeding was terminated."
+
   - id: EVT-EARLY-1930S-HOTEL-MESSMER
     date_label: "early 1930s"
     temporal_precision: approximate-period
-    event: "Earlier research identified S. H. Gottlieb as Inhaber or proprietor of Hotel Messmer in telephone directories."
+    event: "Earlier research identified telephone-directory listings using Inhaber for S. H. Gottlieb at Hotel Messmer."
     status: prior-chat-verified
     subjects:
       - PERSON-SH-GOTTLIEB-HOTELIER
@@ -145,7 +218,7 @@ events:
     sources:
       - SRC-008
       - SRC-009
-    caution: "The exact pages must be reacquired, and Inhaber must be interpreted in its commercial context."
+    caution: "The exact pages must be reacquired. Inhaber must be interpreted in its commercial context, and the listings conflict with the retrospective report that the hotel had been closed since 1930."
 
   - id: EVT-1938-SAVOY-CENTENARY-BOOK
     date_label: "1938"
