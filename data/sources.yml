@@ -1,8 +1,10 @@
 schema_version: 1
 record_type: source
 source_of_truth:
+  - research.md
   - research/research.md
   - "research/Sylvester Hermann Gottlieb — Research Update, 2026-08-16.md"
+  - research/research_2026-08-26.md
 
 sources:
   - id: SRC-001
@@ -168,24 +170,25 @@ sources:
 
   - id: SRC-011
     title: "Austria, Vienna Catholic Church Births and Baptisms, 1850-1920"
-    type: baptism-collection
-    subject_description: "Genealogical match for Sylvester Hermann Gottlieb, born Vienna in 1871."
-    date_label: "1871"
+    type: derivative-genealogical-index
+    subject_description: "Supplied index record for Sylvester Hermann Gottlieb, born 8 December 1871 and baptized 10 December 1871 at St. Johann Nepomuk, Vienna."
+    date_label: "1871; screenshot supplied 2026"
     status: user-supplied
-    status_scope: "Record match supplied through genealogical research; the original entry is not incorporated."
+    status_scope: "The index screenshot was supplied through genealogical research. It is derivative evidence and does not replace the original parish register."
+    local_asset: "research/sylvester_gottlieb_baptism_index_1871.jpg"
+    publication_permission: unresolved
     claims:
       - CLAIM-BIRTH-VIENNA-1871
+      - CLAIM-BAPTISM-VIENNA-1871
+      - CLAIM-PARENTS-VIENNA-1871
+    corroborates_sources:
+      - SRC-027
     missing:
       - "archival repository and collection details"
-      - "parish"
       - "volume"
-      - "page or folio"
-      - "entry number"
-      - "exact birth date"
-      - "exact baptism date"
-      - "complete name as recorded"
-      - "parents and family details"
-      - "address and marginal annotations"
+      - "permanent record URL"
+      - "rights and reuse statement"
+    caution: "Use as a finding aid and transcription aid. Exact historical claims should cite the original register image, SRC-027, wherever it supports them."
 
   - id: SRC-012
     title: "Stadtarchiv Zürich Meldekarten der Einwohnerkontrolle"
@@ -417,3 +420,89 @@ sources:
       - CLAIM-LASSMANN-CROSS-HOTEL-HYPOTHESIS
     notes: "Provides evidence about the Baden-Baden Lassmann family context relevant to a possible, unresolved Zürich–Baden property connection."
     caution: "It does not prove that the Jakob Lassmann associated with Zürich's Baur en Ville was the same person connected with the Baden-Baden property."
+
+  - id: SRC-027
+    title: "Baptismal register of St. Johann Nepomuk, Vienna, entry 281"
+    type: parish-baptism-register-image
+    date_label: "8–10 December 1871"
+    repository: "Repository and archival series not yet recorded in the dossier"
+    parish: "St. Johann Nepomuk, Vienna"
+    page: "363"
+    entry_number: "281"
+    status: verified-direct
+    status_scope: "The supplied image of the original contemporary parish register was inspected directly. Its complete archival citation, provenance, and rights statement remain to be recorded."
+    local_asset: "research/sylvester_gottlieb_baptism_1871.jpg"
+    publication_permission: unresolved
+    establishes: "Entry 281 records Sylvester Hermann Gottlieb, born 8 December 1871 and baptized 10 December 1871, and names his parents Johann Georg Gottlieb and Franziska Leschinger."
+    claims:
+      - CLAIM-BIRTH-VIENNA-1871
+      - CLAIM-BAPTISM-VIENNA-1871
+      - CLAIM-PARENTS-VIENNA-1871
+    corroborated_by_sources:
+      - SRC-011
+    missing:
+      - "archive or diocesan repository"
+      - "parish volume and archival call number"
+      - "permanent source URL"
+      - "complete diplomatic transcription"
+      - "image rights and reuse statement"
+    caution: "The record establishes a Vienna baptismal identity. It does not by itself prove that this child later became either the Zürich hotelier S. H. Gottlieb or the Baden-Baden hotelier of the same full name. Do not publish the image until its rights and provenance are documented."
+
+  - id: SRC-028
+    title: "Savoy Hôtel Baur en Ville collection"
+    type: digitized-archive-collection
+    repository: "Schweizerisches Wirtschaftsarchiv / e-manuscripta"
+    date_label: "Collection; relevant period to be searched"
+    status: high-priority-research-lead
+    url: "https://www.e-manuscripta.ch/swa/content/titleinfo/3183313"
+    claims:
+      - CLAIM-SAVOY-EMANUSCRIPTA-COLLECTION
+    research_value:
+      - "advertising prospectuses from Gottlieb's possible tenure"
+      - "historical documentation and plans"
+      - "menus and printed ephemera"
+      - "possible management and personnel evidence"
+    caution: "The collection's existence is established, but no item in it has yet been shown to contain a new biographical fact about Gottlieb."
+
+  - id: SRC-029
+    title: "Second marketplace listing for 1929 Hotel Messmer ephemera"
+    type: marketplace-listing
+    date_label: "1929, as described by seller metadata"
+    status: indexed-lead
+    url: "https://www.ebay.de/itm/327013572828"
+    claims:
+      - CLAIM-MESSMER-1929
+    corroborates_sources:
+      - SRC-007
+    caution: "The original advertisement has not been inspected. The listing strengthens the research lead but does not establish Gottlieb's role or prove that the advertised date is correct."
+
+  - id: SRC-030
+    title: "Landesarchiv Baden-Württemberg provenance-research context for Hotel Messmer"
+    type: archival-finding-aid-or-context-page
+    archival_reference: "Staatsarchiv Freiburg, F 196/1 Nr. 3834"
+    date_label: "Relevant mid-1930s property-administration context"
+    repository: "Landesarchiv Baden-Württemberg / Staatsarchiv Freiburg"
+    status: catalog-verified
+    status_scope: "The archival reference and context page are recorded in the 26 August research snapshot; the underlying file has not been inspected."
+    url: "https://www2.landesarchiv-bw.de/provenienzforschung/stichwort-4039457-8.html"
+    claims:
+      - CLAIM-MESSMER-F196-ARCHIVAL-LEAD
+    research_value:
+      - "ownership and property administration"
+      - "leases, debts, transfers, and inventories"
+      - "possible clarification of Gottlieb's 1929–1931 role"
+      - "context for later Lassmann and Seelberg administration"
+    caution: "This is distinct from the restitution file SRC-022. Neither file's uninspected contents may be used as evidence for a biographical fact."
+
+  - id: SRC-031
+    title: "Marketplace listing for 1929 Hotel Messmer ephemera reviewed in the 26 August update"
+    type: marketplace-listing
+    date_label: "1929, as described by seller metadata"
+    status: indexed-lead
+    url: "https://www.ebay.de/itm/406719717109"
+    claims:
+      - CLAIM-MESSMER-1929
+    corroborates_sources:
+      - SRC-007
+      - SRC-029
+    caution: "Seller metadata is not a substitute for the original advertisement. Do not use this listing alone to establish Gottlieb's position, ownership, or exact start date at Hotel Messmer."

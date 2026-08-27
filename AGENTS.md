@@ -1,9 +1,10 @@
 # Research and Evidence Rules
 
-These instructions apply to the entire repository. The Markdown files in
-`research/` are the source-of-truth research dossiers and audit trail. The files
-in `data/` are structured representations of those dossiers; they do not
-supersede them.
+These instructions apply to the entire repository. Top-level `research.md` is
+the current consolidated research dossier. The dated and source Markdown files
+in `research/` are cumulative evidence snapshots and the audit trail. The files
+in `data/` are structured representations of that evidence base; they do not
+supersede it.
 
 ## Non-negotiable historical standards
 
@@ -100,8 +101,11 @@ For every new source:
 
 ## Current mandatory cautions
 
+- The 1871 St. Johann Nepomuk register directly verifies a Vienna baptismal
+  identity named Sylvester Hermann Gottlieb. It does not by itself establish a
+  later hotel career.
 - The Zürich hotelier `S. H. Gottlieb`, the full-name Baden-Baden hotelier
-  `Sylvester Hermann Gottlieb`, and the reported Vienna-born 1871 identity form
+  `Sylvester Hermann Gottlieb`, and the verified Vienna baptismal identity form
   strongly compatible but still distinct evidence layers. Do not merge them
   until a direct person-level record links the careers and birth information.
 - Do not state as established fact that Gottlieb became director of Baur en Ville

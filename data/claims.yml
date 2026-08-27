@@ -1,28 +1,62 @@
 schema_version: 1
 record_type: claim
 source_of_truth:
+  - research.md
   - research/research.md
   - "research/Sylvester Hermann Gottlieb — Research Update, 2026-08-16.md"
+  - research/research_2026-08-26.md
 
 claims:
   - id: CLAIM-BIRTH-VIENNA-1871
-    statement: "Genealogical research identifies Sylvester Hermann Gottlieb as born in Vienna in 1871."
+    statement: "The St. Johann Nepomuk baptismal register records Sylvester Hermann Gottlieb as born in Vienna on 8 December 1871."
     kind: biographical
-    status: user-supplied
+    status: verified-direct
     subjects:
-      - PERSON-SYLVESTER-HERMANN-GOTTLIEB
+      - PERSON-SYLVESTER-GOTTLIEB-VIENNA-1871
     places:
       - PLACE-VIENNA
     sources:
+      - SRC-027
       - SRC-011
-    caution: "The original baptismal entry is not incorporated. Do not add an exact date, parish, parents, or address."
-    public_wording: "Born in Vienna in 1871 according to genealogical research."
+    caution: "This claim concerns the child in the Vienna register. The record does not by itself link him to the Zürich or Baden-Baden hotel careers."
+    public_wording: "A Vienna parish register records a Sylvester Hermann Gottlieb born on 8 December 1871. Whether he was the later hotelier remains strongly supported but unproved."
+
+  - id: CLAIM-BAPTISM-VIENNA-1871
+    statement: "The St. Johann Nepomuk register records the baptism of Sylvester Hermann Gottlieb on 10 December 1871 as entry 281 on page 363."
+    kind: baptism
+    status: verified-direct
+    subjects:
+      - PERSON-SYLVESTER-GOTTLIEB-VIENNA-1871
+    places:
+      - PLACE-VIENNA
+    organizations:
+      - ORG-ST-JOHANN-NEPOMUK
+    sources:
+      - SRC-027
+      - SRC-011
+    caution: "The full archival citation and image rights remain to be documented."
+
+  - id: CLAIM-PARENTS-VIENNA-1871
+    statement: "The baptismal entry names Johann Georg Gottlieb and Franziska Leschinger as the parents of the child Sylvester Hermann Gottlieb."
+    kind: parentage
+    status: verified-direct
+    subjects:
+      - PERSON-SYLVESTER-GOTTLIEB-VIENNA-1871
+      - PERSON-JOHANN-GEORG-GOTTLIEB
+      - PERSON-FRANZISKA-LESCHINGER
+    places:
+      - PLACE-VIENNA
+    sources:
+      - SRC-027
+      - SRC-011
+    caution: "The names are supported by the original register and supplied index. Other handwritten family details, occupations, residence, godparents, and annotations still require a formal transcription."
 
   - id: CLAIM-IDENTITY-SYLVESTER-AND-SH
-    statement: "Matching initials, profession, and chronology strongly support identifying the Zürich hotelier S. H. Gottlieb with Baden-Baden hotelier Sylvester Hermann Gottlieb, but no direct linking record has yet made the identification conclusive."
+    statement: "The Vienna baptismal subject, the full-name Baden-Baden hotelier, and the Zürich hotelier S. H. Gottlieb have strongly compatible names, initials, profession, and chronology, but no direct person-level record yet links all three evidence layers."
     kind: identity-hypothesis
     status: open-question
     subjects:
+      - PERSON-SYLVESTER-GOTTLIEB-VIENNA-1871
       - PERSON-SYLVESTER-HERMANN-GOTTLIEB
       - PERSON-SH-GOTTLIEB-HOTELIER
     sources:
@@ -34,11 +68,12 @@ claims:
       - SRC-009
       - SRC-011
       - SRC-020
+      - SRC-027
     potential_resolution_sources:
       - SRC-012
       - SRC-014
-    caution: "Keep the Zürich initials record, the full-name Baden-Baden record, and the reported Vienna birth layer distinct until a municipal or other person-level source directly links the careers and birth information."
-    public_wording: "The Zürich and Baden-Baden hotel records are strongly compatible, but no source yet directly joins the two careers or links them conclusively to the reported Vienna birth."
+    caution: "Keep the Zürich initials record, the full-name Baden-Baden record, and the Vienna baptismal identity distinct until a municipal, court, or other person-level source directly links the careers and birth information."
+    public_wording: "The Vienna, Zürich, and Baden-Baden records are strongly compatible, but no source yet directly joins the baptismal identity to both hotel careers."
 
   - id: CLAIM-SAVOY-1911
     statement: "Earlier research found a 1911 advertisement identifying S. H. Gottlieb as director of Baur en Ville or Savoy."
@@ -163,7 +198,7 @@ claims:
     caution: "The dossier does not resolve whether the sources describe different roles, outdated guide information, incorrect dates, or another explanation."
 
   - id: CLAIM-GRAND-VICTORIA-1924
-    statement: "Earlier research identified a possible 1924 connection between S. H. Gottlieb and Zürich's Grand Hotel Victoria."
+    statement: "Earlier research reported that Gottlieb moved to Zürich's Grand Hotel Victoria in autumn 1923 and identified a related 1924 press reference, but the underlying contemporary item has not been reacquired."
     kind: employment-association
     status: needs-recheck
     subjects:
@@ -174,10 +209,10 @@ claims:
       - PLACE-ZURICH
     sources:
       - SRC-006
-    caution: "Do not state that Gottlieb was director of Grand Hotel Victoria in 1924. The original item and his role have not been verified."
+    caution: "The date, wording, and role remain needs-recheck. Do not state that Gottlieb was director of Grand Hotel Victoria or that the move occurred in autumn 1923 until the original item is captured and cited. The 1922 guide instead lists A. Kummer-Wenger with Hotel Victoria."
 
   - id: CLAIM-MESSMER-1929
-    statement: "Marketplace metadata indicates that a 1929 Hotel Messmer advertisement associated with Gottlieb exists."
+    statement: "Several marketplace records indicate that 1929 Hotel Messmer advertising ephemera associated with the name Gottlieb exists."
     kind: employment-or-business-association
     status: indexed-lead
     subjects:
@@ -188,7 +223,9 @@ claims:
       - PLACE-BADEN-BADEN
     sources:
       - SRC-007
-    caution: "The listing alone does not establish position, ownership, or the underlying advertisement's wording."
+      - SRC-029
+      - SRC-031
+    caution: "None of the original advertisements has been adequately inspected. The listings strengthen the research lead but do not establish Gottlieb's position, ownership, or exact start date."
 
   - id: CLAIM-MESSMER-C1932
     statement: "Earlier research found a circa 1932 telephone-directory entry naming S. H. Gottlieb as Inhaber of Hotel Messmer."
@@ -306,6 +343,21 @@ claims:
       - SRC-022
     caution: "Only the catalog entry has been inspected; the file's contents cannot yet support biographical conclusions about Gottlieb."
 
+  - id: CLAIM-MESSMER-F196-ARCHIVAL-LEAD
+    statement: "A Landesarchiv Baden-Württemberg context page identifies Staatsarchiv Freiburg file F 196/1 Nr. 3834 as a potentially relevant source for the later Hotel Messmer property administration."
+    kind: archival-research-lead
+    status: catalog-verified
+    subjects:
+      - PERSON-JAKOB-LASSMANN
+    organizations:
+      - ORG-HOTEL-MESSMER
+      - ORG-STAATSARCHIV-FREIBURG
+    places:
+      - PLACE-BADEN-BADEN
+    sources:
+      - SRC-030
+    caution: "The underlying file has not been inspected. Do not infer its contents or use it to establish Gottlieb's ownership, lease terms, or later movements."
+
   - id: CLAIM-LASSMANN-CROSS-HOTEL-HYPOTHESIS
     statement: "It remains unresolved whether the Jakob Lassmann associated in secondary material with Baur en Ville was the same Jakob Lassmann whose family was connected with the Hotel Messmer property."
     kind: identity-and-business-hypothesis
@@ -338,6 +390,20 @@ claims:
     sources:
       - SRC-010
     caution: "The book's contents concerning Gottlieb and the management chronology have not been inspected."
+
+  - id: CLAIM-SAVOY-EMANUSCRIPTA-COLLECTION
+    statement: "The Schweizerisches Wirtschaftsarchiv makes a substantial digitized Savoy Hôtel Baur en Ville collection available through e-manuscripta."
+    kind: archival-research-lead
+    status: high-priority-research-lead
+    organizations:
+      - ORG-SAVOY-BAUR-EN-VILLE
+      - ORG-SCHWEIZERISCHES-WIRTSCHAFTSARCHIV
+      - ORG-E-MANUSCRIPTA
+    places:
+      - PLACE-ZURICH
+    sources:
+      - SRC-028
+    caution: "No item in the collection has yet been shown to add a new biographical fact about Gottlieb."
 
   - id: CLAIM-ZURICH-MELDEKARTE-RESEARCH-VALUE
     statement: "Stadtarchiv Zürich preserves historical resident-registration cards that may contain arrival, departure, address, and personal information."

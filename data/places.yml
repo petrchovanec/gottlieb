@@ -1,8 +1,10 @@
 schema_version: 1
 record_type: place
 source_of_truth:
+  - research.md
   - research/research.md
   - "research/Sylvester Hermann Gottlieb — Research Update, 2026-08-16.md"
+  - research/research_2026-08-26.md
 
 places:
   - id: PLACE-VIENNA
@@ -11,10 +13,13 @@ places:
     country: "Austria"
     claims:
       - CLAIM-BIRTH-VIENNA-1871
+      - CLAIM-BAPTISM-VIENNA-1871
+      - CLAIM-PARENTS-VIENNA-1871
     source_mentions:
       - SRC-011
-    research_role: "Working birthplace and location of the baptismal-record search."
-    caution: "The exact parish, address, and original baptismal entry are not yet incorporated."
+      - SRC-027
+    research_role: "Verified location of the December 1871 St. Johann Nepomuk baptismal record and continuing focus of identity-link research."
+    caution: "The baptismal identity is verified, but its connection to the later Zürich and Baden-Baden hotel careers remains unresolved. The residence in the entry has not yet been reliably transcribed."
 
   - id: PLACE-ZURICH
     preferred_name: "Zürich"
