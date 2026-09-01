@@ -9,8 +9,9 @@ Planned public URL:
 
 ## Research architecture
 
-- `research/` contains the authoritative research dossiers and future research
-  updates.
+- `research.md` is the consolidated current research dossier.
+- `research/` preserves dated research snapshots, supporting notes, and local
+  evidence images as an audit trail.
 - `AGENTS.md` contains the mandatory historical and evidence rules.
 - `data/sources.yml` stores stable source records.
 - `data/claims.yml` links exact historical statements to source IDs.

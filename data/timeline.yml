@@ -1,8 +1,10 @@
 schema_version: 1
 record_type: timeline-event
 source_of_truth:
+  - research.md
   - research/research.md
   - "research/Sylvester Hermann Gottlieb — Research Update, 2026-08-16.md"
+  - research/research_2026-08-26.md
 
 model_notes:
   date_label: "Human-readable date wording preserved from the dossier."
@@ -11,20 +13,40 @@ model_notes:
 
 events:
   - id: EVT-1871-BIRTH
-    date_label: "1871"
-    temporal_precision: year
-    event: "Genealogical research identifies the birth of Sylvester Hermann Gottlieb in Vienna."
-    status: user-supplied
+    date_label: "8 December 1871"
+    temporal_precision: exact-date
+    event: "The St. Johann Nepomuk register records the birth of Sylvester Hermann Gottlieb in Vienna."
+    status: verified-direct
     subjects:
-      - PERSON-SYLVESTER-HERMANN-GOTTLIEB
+      - PERSON-SYLVESTER-GOTTLIEB-VIENNA-1871
     places:
       - PLACE-VIENNA
     organizations: []
     claims:
       - CLAIM-BIRTH-VIENNA-1871
     sources:
+      - SRC-027
       - SRC-011
-    caution: "The original baptismal entry has not been incorporated."
+    caution: "The record establishes the Vienna child, not a direct link to either later hotel career."
+
+  - id: EVT-1871-BAPTISM
+    date_label: "10 December 1871"
+    temporal_precision: exact-date
+    event: "Sylvester Hermann Gottlieb is recorded as baptized at St. Johann Nepomuk, entry 281 on page 363."
+    status: verified-direct
+    subjects:
+      - PERSON-SYLVESTER-GOTTLIEB-VIENNA-1871
+    places:
+      - PLACE-VIENNA
+    organizations:
+      - ORG-ST-JOHANN-NEPOMUK
+    claims:
+      - CLAIM-BAPTISM-VIENNA-1871
+      - CLAIM-PARENTS-VIENNA-1871
+    sources:
+      - SRC-027
+      - SRC-011
+    caution: "The full archival citation, diplomatic transcription, and image rights remain incomplete."
 
   - id: EVT-C1910-SAVOY-SECONDARY
     date_label: "circa 1910"
@@ -133,9 +155,9 @@ events:
     caution: "This records the 1922 listing and does not by itself resolve the separate 1924 Gottlieb lead."
 
   - id: EVT-1924-GRAND-HOTEL-VICTORIA
-    date_label: "1924"
-    temporal_precision: year
-    event: "Earlier research identified a possible association between S. H. Gottlieb and Grand Hotel Victoria."
+    date_label: "autumn 1923 / 1924 lead"
+    temporal_precision: reported-period-needs-recheck
+    event: "Earlier research reported a possible move to Grand Hotel Victoria in autumn 1923 and a related 1924 press reference."
     status: needs-recheck
     subjects:
       - PERSON-SH-GOTTLIEB-HOTELIER
@@ -147,7 +169,7 @@ events:
       - CLAIM-GRAND-VICTORIA-1924
     sources:
       - SRC-006
-    caution: "Do not state that Gottlieb was the hotel's director."
+    caution: "The original item has not been reacquired. Do not state that the move or directorship is established; the 1922 guide lists A. Kummer-Wenger with Hotel Victoria."
 
   - id: EVT-1929-HOTEL-MESSMER
     date_label: "1929"
@@ -164,7 +186,9 @@ events:
       - CLAIM-MESSMER-1929
     sources:
       - SRC-007
-    caution: "The underlying advertisement has not been transcribed or independently preserved."
+      - SRC-029
+      - SRC-031
+    caution: "The underlying advertisements have not been transcribed or independently preserved. Multiple listings strengthen the lead, not the biographical claim."
 
   - id: EVT-1930-HOTEL-MESSMER-CLOSED
     date_label: "since 1930 (reported retrospectively)"

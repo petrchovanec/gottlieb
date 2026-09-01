@@ -1,8 +1,10 @@
 schema_version: 1
 record_type: organization
 source_of_truth:
+  - research.md
   - research/research.md
   - "research/Sylvester Hermann Gottlieb — Research Update, 2026-08-16.md"
+  - research/research_2026-08-26.md
 
 organizations:
   - id: ORG-SAVOY-BAUR-EN-VILLE
@@ -24,6 +26,7 @@ organizations:
       - CLAIM-SAVOY-SECONDARY-GOTTLIEB-1910-1918
       - CLAIM-SAVOY-SECONDARY-GIGER-1918-1926
       - CLAIM-SAVOY-CENTENARY-1938
+      - CLAIM-SAVOY-EMANUSCRIPTA-COLLECTION
       - CLAIM-LASSMANN-CROSS-HOTEL-HYPOTHESIS
     source_mentions:
       - SRC-001
@@ -33,6 +36,7 @@ organizations:
       - SRC-005
       - SRC-010
       - SRC-018
+      - SRC-028
     caution: "The management chronology contains an unresolved conflict between direct 1922 evidence and a secondary timeline."
 
   - id: ORG-GRAND-HOTEL-VICTORIA
@@ -61,6 +65,7 @@ organizations:
       - CLAIM-MESSMER-1934
       - CLAIM-MESSMER-LASSMANN-PROPERTY
       - CLAIM-MESSMER-RESTITUTION-FILE-1949-1952
+      - CLAIM-MESSMER-F196-ARCHIVAL-LEAD
       - CLAIM-LASSMANN-CROSS-HOTEL-HYPOTHESIS
     source_mentions:
       - SRC-007
@@ -71,6 +76,9 @@ organizations:
       - SRC-020
       - SRC-021
       - SRC-022
+      - SRC-029
+      - SRC-030
+      - SRC-031
     caution: "Gottlieb is directly documented as Pächter—lessee or operator—in 1931, not as proven property owner. The reported 1930 closure and later directory references remain in conflict."
 
   - id: ORG-INTERNET-ARCHIVE
@@ -202,8 +210,10 @@ organizations:
     type: state-archive
     claims:
       - CLAIM-MESSMER-RESTITUTION-FILE-1949-1952
+      - CLAIM-MESSMER-F196-ARCHIVAL-LEAD
     source_mentions:
       - SRC-022
+      - SRC-030
 
   - id: ORG-E-PERIODICA
     preferred_name: "E-Periodica"
@@ -219,3 +229,31 @@ organizations:
     source_mentions:
       - SRC-025
     caution: "The tree is a research lead only and must not be used as proof of biographical details."
+
+  - id: ORG-ST-JOHANN-NEPOMUK
+    preferred_name: "St. Johann Nepomuk parish"
+    type: parish
+    place: PLACE-VIENNA
+    claims:
+      - CLAIM-BAPTISM-VIENNA-1871
+    source_mentions:
+      - SRC-011
+      - SRC-027
+    caution: "The dossier still needs the parish volume, archival call number, permanent source URL, and image-rights statement."
+
+  - id: ORG-SCHWEIZERISCHES-WIRTSCHAFTSARCHIV
+    preferred_name: "Schweizerisches Wirtschaftsarchiv"
+    type: archive
+    place: PLACE-ZURICH
+    claims:
+      - CLAIM-SAVOY-EMANUSCRIPTA-COLLECTION
+    source_mentions:
+      - SRC-028
+
+  - id: ORG-E-MANUSCRIPTA
+    preferred_name: "e-manuscripta"
+    type: digital-repository
+    claims:
+      - CLAIM-SAVOY-EMANUSCRIPTA-COLLECTION
+    source_mentions:
+      - SRC-028

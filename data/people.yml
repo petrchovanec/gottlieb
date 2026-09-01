@@ -1,17 +1,42 @@
 schema_version: 1
 record_type: person
 source_of_truth:
+  - research.md
   - research/research.md
   - "research/Sylvester Hermann Gottlieb — Research Update, 2026-08-16.md"
+  - research/research_2026-08-26.md
 
 model_notes:
   identity_policy: "Separate records represent unresolved identities. A name resemblance is not enough to merge them."
   names: "Search variants are discovery aids and do not prove identity."
 
 people:
+  - id: PERSON-SYLVESTER-GOTTLIEB-VIENNA-1871
+    preferred_name: "Sylvester Hermann Gottlieb"
+    record_scope: "The child recorded in the St. Johann Nepomuk baptismal register in Vienna in December 1871."
+    research_name_variants:
+      - "Sylvester Hermann Gottlieb"
+      - "Silvester Hermann Gottlieb"
+    identity_status: verified-baptismal-identity-unlinked
+    claims:
+      - CLAIM-BIRTH-VIENNA-1871
+      - CLAIM-BAPTISM-VIENNA-1871
+      - CLAIM-PARENTS-VIENNA-1871
+      - CLAIM-IDENTITY-SYLVESTER-AND-SH
+    source_mentions:
+      - SRC-011
+      - SRC-027
+    identity_links:
+      - target: PERSON-SYLVESTER-HERMANN-GOTTLIEB
+        relationship: possible-same-person
+        status: open-question
+        claim: CLAIM-IDENTITY-SYLVESTER-AND-SH
+        do_not_merge: true
+    caution: "The baptism establishes this Vienna identity but does not record a later hotel career. Keep it separate from the Baden-Baden and Zürich hotelier records until direct linking evidence is found."
+
   - id: PERSON-SYLVESTER-HERMANN-GOTTLIEB
     preferred_name: "Sylvester Hermann Gottlieb"
-    record_scope: "Full name directly attested for a Baden-Baden hotelier in 1931, with a separate reported Vienna birth identity still under investigation."
+    record_scope: "The full-name hotelier directly attested in Baden-Baden in 1931 as Pächter of Hotel Meßmer."
     research_name_variants:
       - "Sylvester Hermann Gottlieb"
       - "Silvester Hermann Gottlieb"
@@ -21,22 +46,25 @@ people:
       - "Gottlieb, S. H."
     identity_status: working-identity
     claims:
-      - CLAIM-BIRTH-VIENNA-1871
       - CLAIM-SYLVESTER-BADEN-HOTELIER-1931
       - CLAIM-MESSMER-LESSEE-1931
       - CLAIM-GOTTLIEB-BANKRUPTCY-AUFHEBUNG-1931
       - CLAIM-IDENTITY-SYLVESTER-AND-SH
       - CLAIM-DEATH-UNRESOLVED
     source_mentions:
-      - SRC-011
       - SRC-020
     identity_links:
+      - target: PERSON-SYLVESTER-GOTTLIEB-VIENNA-1871
+        relationship: possible-same-person
+        status: open-question
+        claim: CLAIM-IDENTITY-SYLVESTER-AND-SH
+        do_not_merge: true
       - target: PERSON-SH-GOTTLIEB-HOTELIER
         relationship: possible-same-person
         status: open-question
         claim: CLAIM-IDENTITY-SYLVESTER-AND-SH
         do_not_merge: true
-    caution: "The Baden-Baden hotel career is directly attested under the full name in 1931. The Vienna birth remains user-supplied, and the Zürich initials record is strongly compatible but not conclusively linked."
+    caution: "The Baden-Baden hotel career is directly attested under the full name in 1931. The verified Vienna baptism and Zürich initials record are strongly compatible but not conclusively linked to this person."
 
   - id: PERSON-SH-GOTTLIEB-HOTELIER
     preferred_name: "S. H. Gottlieb"
@@ -72,6 +100,28 @@ people:
         claim: CLAIM-IDENTITY-SYLVESTER-AND-SH
         do_not_merge: true
     caution: "Do not expand the initials or attach Vienna birth details without a person-level linking record."
+
+  - id: PERSON-JOHANN-GEORG-GOTTLIEB
+    preferred_name: "Johann Georg Gottlieb"
+    record_scope: "Father named in the 1871 baptismal entry for Sylvester Hermann Gottlieb."
+    identity_status: named-in-primary-source
+    claims:
+      - CLAIM-PARENTS-VIENNA-1871
+    source_mentions:
+      - SRC-027
+      - SRC-011
+    caution: "No further biographical details should be published until the handwritten entry is formally transcribed and independently contextualized."
+
+  - id: PERSON-FRANZISKA-LESCHINGER
+    preferred_name: "Franziska Leschinger"
+    record_scope: "Mother named in the 1871 baptismal entry for Sylvester Hermann Gottlieb."
+    identity_status: named-in-primary-source
+    claims:
+      - CLAIM-PARENTS-VIENNA-1871
+    source_mentions:
+      - SRC-027
+      - SRC-011
+    caution: "No further biographical details should be published until the handwritten entry is formally transcribed and independently contextualized."
 
   - id: PERSON-I-GOTTLIEB
     preferred_name: "I. Gottlieb"

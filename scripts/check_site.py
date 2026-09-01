@@ -84,9 +84,18 @@ def validate_data() -> tuple[list[str], dict[str, set[str]]]:
                 research_path = ROOT / research_file
                 if not research_path.is_file():
                     errors.append(f"{filename}: missing research file {research_file}")
-                if research_path.parent != ROOT / "research":
-                    errors.append(f"{filename}: research file is outside research/: {research_file}")
+                allowed_top_level = research_path == ROOT / "research.md"
+                allowed_snapshot = research_path.parent == ROOT / "research"
+                if not (allowed_top_level or allowed_snapshot):
+                    errors.append(f"{filename}: research file is outside the approved dossier locations: {research_file}")
         datasets[kind] = document[key]
+    if expected_research_files is not None:
+        declared = set(expected_research_files)
+        required = {"research.md"}
+        required.update(path.relative_to(ROOT).as_posix() for path in (ROOT / "research").glob("*.md"))
+        omitted = required - declared
+        if omitted:
+            errors.append(f"source_of_truth omits research dossier files: {', '.join(sorted(omitted))}")
     ids: dict[str, set[str]] = {}
     for kind, records in datasets.items():
         record_ids = [record.get("id") for record in records]
@@ -97,7 +106,7 @@ def validate_data() -> tuple[list[str], dict[str, set[str]]]:
         ids[kind] = set(record_ids)
 
     reference_fields = {
-        "sources": {"claims": "claims", "research_targets": "claims", "corroborates_sources": "sources"},
+        "sources": {"claims": "claims", "research_targets": "claims", "corroborates_sources": "sources", "corroborated_by_sources": "sources"},
         "claims": {"subjects": "people", "organizations": "organizations", "places": "places", "sources": "sources", "conflicts_with": "claims", "potential_resolution_sources": "sources", "research_targets": "sources"},
         "events": {"subjects": "people", "organizations": "organizations", "places": "places", "claims": "claims", "sources": "sources", "research_targets": "sources"},
         "people": {"claims": "claims", "source_mentions": "sources"},
